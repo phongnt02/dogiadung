@@ -21,27 +21,6 @@
                     Tạo mới khách hàng</a>
                 </div>
                 <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                      class="fas fa-file-upload"></i> Tải từ file</a>
-                </div>
-  
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
-                      class="fas fa-print"></i> In dữ liệu</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                      class="fas fa-copy"></i> Sao chép</a>
-                </div>
-  
-                <div class="col-sm-2">
-                  <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
-                      class="fas fa-file-pdf"></i> Xuất PDF</a>
-                </div>
-                <div class="col-sm-2">
                   <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
                       class="fas fa-trash-alt"></i> Xóa tất cả </a>
                 </div>
@@ -78,4 +57,78 @@
         </div>
       </div>
     </main>
+    <!--
+  MODAL
+-->
+<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Chỉnh sửa thông tin khách hàng</h5>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label">ID khách hàng</label>
+              <input class="form-control" type="text" required value="#CD2187" disabled>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Họ và tên</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="exampleSelect1" class="control-label">Giới tính</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>-- Chọn giới tính --</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Tên đăng nhập</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Mật khẩu</label>
+              <input class="form-control" type="password">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Email</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Số điện thoại</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Địa chỉ</label>
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  MODAL
+-->
+<script>
+  //Modal edit form
+  $(document).ready(function(){
+    $(".btn-sm.edit").on("click", function () {
+        $("#ModalUP").modal({ backdrop: false, keyboard: false })
+      });
+  });
+</script>
 <?php require '../../../layout/--admin/footer.php'; ?>

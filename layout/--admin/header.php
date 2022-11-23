@@ -20,6 +20,8 @@ ob_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <!-- Jquery -->
+  <script src="../../../public/--admin/js/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -32,7 +34,7 @@ ob_start();
 
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="/index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href=""><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>

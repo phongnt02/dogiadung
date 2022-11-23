@@ -21,27 +21,6 @@
                                 Tạo mới sản phẩm</a>
                             </div>
                             <div class="col-sm-2">
-                              <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                                  class="fas fa-file-upload"></i> Tải từ file</a>
-                            </div>
-              
-                            <div class="col-sm-2">
-                              <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
-                                  class="fas fa-print"></i> In dữ liệu</a>
-                            </div>
-                            <div class="col-sm-2">
-                              <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                                  class="fas fa-copy"></i> Sao chép</a>
-                            </div>
-              
-                            <div class="col-sm-2">
-                              <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
-                            </div>
-                            <div class="col-sm-2">
-                              <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
-                                  class="fas fa-file-pdf"></i> Xuất PDF</a>
-                            </div>
-                            <div class="col-sm-2">
                               <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
                                   class="fas fa-trash-alt"></i> Xóa tất cả </a>
                             </div>
@@ -87,78 +66,111 @@
         </div>
     </main>
 
-<!--
+ <!--
   MODAL
 -->
 <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
-data-keyboard="false">
-<div class="modal-dialog modal-dialog-centered" role="document">
-  <div class="modal-content">
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
 
-    <div class="modal-body">
-      <div class="row">
-        <div class="form-group  col-md-12">
-          <span class="thong-tin-thanh-toan">
-            <h5>Chỉnh sửa thông tin sản phẩm cơ bản</h5>
-          </span>
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Chỉnh sửa thông tin sản phẩm</h5>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label">Mã sản phẩm</label>
+              <input class="form-control" type="text" required value="#CD2187" disabled>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label"name="name">Tên sản phẩm</label>
+                <input class="form-control" type="text">
+              </div>
+
+
+              <div class="form-group col-md-12">
+                <label class="control-label"name="amount">Số lượng</label>
+                <input class="form-control" type="number">
+              </div>
+              <div class="form-group col-md-12 ">
+                <label for="exampleSelect1" class="control-label"name="status">Tình trạng</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>-- Chọn tình trạng --</option>
+                  <option>Còn hàng</option>
+                  <option>Hết hàng</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="exampleSelect1" class="control-label"name="category" >Danh mục</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>-- Chọn danh mục --</option>
+                  <option>Bàn ăn</option>
+                  <option>Bàn thông minh</option>
+                  <option>Tủ</option>
+                  <option>Ghế gỗ</option>
+                  <option>Ghế sắt</option>
+                  <option>Giường người lớn</option>
+                  <option>Giường trẻ em</option>
+                  <option>Bàn trang điểm</option>
+                  <option>Giá đỡ</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="exampleSelect1" class="control-label" name="brand" >Thương hiệu</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>-- Chọn thương hiệu --</option>
+                  <option>Điện máy xanh</option>
+                  <option>Thế giới di động</option>
+                  <option>FPT</option>
+                  <option>Bách hóa xanh</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label"name="sale_price" >Giá bán</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label"name="price" >Giá vốn</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label"name="promotional_price" >Giá khuyến mãi</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label" name="image" >Ảnh sản phẩm</label>
+                <div id="myfileupload">
+                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label" name="product_code" >Mô tả sản phẩm</label>
+                <textarea class="form-control" name="mota" id="mota"></textarea>
+              </div>
+          </div>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
-      <div class="row">
-        <div class="form-group col-md-6">
-            <label class="control-label">Mã sản phẩm </label>
-            <input class="form-control" type="number" value="71309005">
-          </div>
-        <div class="form-group col-md-6">
-            <label class="control-label">Tên sản phẩm</label>
-          <input class="form-control" type="text" required value="Bàn ăn gỗ Theresa">
-        </div>
-        <div class="form-group  col-md-6">
-            <label class="control-label">Số lượng</label>
-          <input class="form-control" type="number" required value="20">
-        </div>
-        <div class="form-group col-md-6 ">
-            <label for="exampleSelect1" class="control-label">Tình trạng sản phẩm</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>Còn hàng</option>
-              <option>Hết hàng</option>
-              <option>Đang nhập hàng</option>
-            </select>
-          </div>
-          <div class="form-group col-md-6">
-            <label class="control-label">Giá bán</label>
-            <input class="form-control" type="text" value="5.600.000">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="exampleSelect1" class="control-label">Danh mục</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>Bàn ăn</option>
-              <option>Bàn thông minh</option>
-              <option>Tủ</option>
-              <option>Ghế gỗ</option>
-              <option>Ghế sắt</option>
-              <option>Giường người lớn</option>
-              <option>Giường trẻ em</option>
-              <option>Bàn trang điểm</option>
-              <option>Giá đỡ</option>
-            </select>
-          </div>
-      </div>
-      <BR>
-      <a href="#" style="    float: right;
-    font-weight: 600;
-    color: #ea0000;">Chỉnh sửa sản phẩm nâng cao</a>
-      <BR>
-      <BR>
-      <button class="btn btn-save" type="button">Lưu lại</button>
-      <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-      <BR>
-    </div>
-    <div class="modal-footer">
     </div>
   </div>
-</div>
-</div>
-<!--
-MODAL
+  <!--
+  MODAL
 -->
+<script>
+  //Modal edit form
+  $(document).ready(function(){
+    $(".btn-sm.edit").on("click", function () {
+        $("#ModalUP").modal({ backdrop: false, keyboard: false })
+      });
+  });
+</script>
 <?php require '../../../layout/--admin/footer.php'; ?>

@@ -77,5 +77,64 @@
         </div>
       </div>
     </main>
-    
+     <!--
+  MODAL
+-->
+<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Chỉnh sửa thông tin bài viết</h5>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label">ID bài viết</label>
+              <input class="form-control" type="text" required value="#CD2187" disabled>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Tiêu đề</label>
+              <input class="form-control" type="text" required value="Content">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Mô tả ngắn</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Nội dung</label>
+              <textarea class="form-control" rows="8" col="10"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label">Hình ảnh</label>
+                <div id="myfileupload">
+                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                </div>
+            </div>
+          </div>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  MODAL
+-->
+<script>
+  //Modal edit form
+  $(document).ready(function(){
+    $(".btn-sm.edit").on("click", function () {
+        $("#ModalUP").modal({ backdrop: false, keyboard: false })
+      });
+  });
+</script>
 <?php require '../../../layout/--admin/footer.php'; ?>
