@@ -1,6 +1,10 @@
 <?php 
     require '../../../layout/--admin/header.php'; 
     require '../../../layout/--admin/sidebar.php';
+    include "../../../connect/database.php";
+
+
+
 ?>
     <main class="app-content">
     <div class="app-title">
@@ -14,23 +18,23 @@
         <div class="tile">
           <h3 class="tile-title">Tạo mới sản phẩm</h3>
           <div class="tile-body">
-            <form class="row">
+            <form class="row" method="post">
               <div class="form-group col-md-3">
-                <label class="control-label">Mã sản phẩm </label>
+                <label class="control-label" name="product_code">Mã sản phẩm </label>
                 <input class="form-control" type="number" placeholder="">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Tên sản phẩm</label>
+                <label class="control-label"name="name">Tên sản phẩm</label>
                 <input class="form-control" type="text">
               </div>
 
 
               <div class="form-group  col-md-3">
-                <label class="control-label">Số lượng</label>
+                <label class="control-label"name="amount">Số lượng</label>
                 <input class="form-control" type="number">
               </div>
               <div class="form-group col-md-3 ">
-                <label for="exampleSelect1" class="control-label">Tình trạng</label>
+                <label for="exampleSelect1" class="control-label"name="status">Tình trạng</label>
                 <select class="form-control" id="exampleSelect1">
                   <option>-- Chọn tình trạng --</option>
                   <option>Còn hàng</option>
@@ -38,7 +42,7 @@
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label for="exampleSelect1" class="control-label">Danh mục</label>
+                <label for="exampleSelect1" class="control-label"name="category" >Danh mục</label>
                 <select class="form-control" id="exampleSelect1">
                   <option>-- Chọn danh mục --</option>
                   <option>Bàn ăn</option>
@@ -53,7 +57,7 @@
                 </select>
               </div>
               <div class="form-group col-md-3 ">
-                <label for="exampleSelect1" class="control-label">Thương hiệu</label>
+                <label for="exampleSelect1" class="control-label" name="brand" >Thương hiệu</label>
                 <select class="form-control" id="exampleSelect1">
                   <option>-- Chọn thương hiệu --</option>
                   <option>Điện máy xanh</option>
@@ -63,23 +67,23 @@
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá bán</label>
+                <label class="control-label"name="sale_price" >Giá bán</label>
                 <input class="form-control" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá vốn</label>
+                <label class="control-label"name="price" >Giá vốn</label>
                 <input class="form-control" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá khuyến mãi</label>
+                <label class="control-label"name="promotional_price" >Giá khuyến mãi</label>
                 <input class="form-control" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Người tạo</label>
+                <label class="control-label" name="user" >Người tạo</label>
                 <input class="form-control" type="text">
               </div>
               <div class="form-group col-md-12">
-                <label class="control-label">Ảnh sản phẩm</label>
+                <label class="control-label" name="image" >Ảnh sản phẩm</label>
                 <div id="myfileupload">
                   <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
                 </div>
@@ -94,9 +98,10 @@
 
               </div>
               <div class="form-group col-md-12">
-                <label class="control-label">Mô tả sản phẩm</label>
+                <label class="control-label" name="product_code" >Mô tả sản phẩm</label>
                 <textarea class="form-control" name="mota" id="mota"></textarea>
               </div>
+            </form>
 
           </div>
           <button class="btn btn-save" type="button">Lưu lại</button>

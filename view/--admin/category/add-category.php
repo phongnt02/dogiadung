@@ -1,11 +1,13 @@
 <?php
 require '../../../layout/--admin/header.php';
 require '../../../layout/--admin/sidebar.php';
+require "handle.php"
 ?>
 <main class="app-content">
+
   <div class="app-title">
     <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item">Quản lý danh mục</li>
+      <li class="breadcrumb-item">Quản lý danh mục</li>s
       <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
     </ul>
   </div>
@@ -20,30 +22,30 @@ require '../../../layout/--admin/sidebar.php';
             </div>
 
           </div>
-          <form class="row">
+          <form class="row" action="handle.php" method="post">
             <div class="col-md-6">
               <div class="form-group col-md-12">
                 <label class="control-label">Tên danh mục</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" name="name">
               </div>
               <div class="form-group col-md-12">
                 <label class="control-label">Mã code</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" name="category_code">
               </div>
               <div class="form-group col-md-12">
                 <label class="control-label">Người tạo</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" name="user">
               </div>
               <div class="form-group col-md-12">
                 <label class="control-label">Mô tả</label>
-                <textarea class="form-control" rows="8" col="10"></textarea>
+                <textarea class="form-control" rows="8" col="10" name="description"></textarea>
               </div>
             </div>
             <div class="form-group col-md-6">
               <div class="form-group col-md-12">
                 <label class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);">
+                  <input type="file" name="image" id="uploadfile" name="image" onchange="readURL(this);">
                 </div>
                 <div id="thumbbox">
                   <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none">
@@ -51,10 +53,13 @@ require '../../../layout/--admin/sidebar.php';
                 </div>
               </div>
             </div>
-        </div>
-        <button class="btn btn-save" type="button">Lưu lại</button>
+            </div>
+        <button class="btn btn-save" type="submit" name="add_category">Lưu lại</button>
         <a class="btn btn-cancel" href="/doc/table-data-oder.html">Hủy bỏ</a>
       </div>
+          </form>
+
+
 </main>
 
 
