@@ -72,6 +72,11 @@ ob_start();
 								<li><a href="../checkout/checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="../cart/cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="../login/login.php"><i class="fa fa-lock"></i> Login</a></li>
+								<li class="navbar-nav__logged">
+									<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="img" class="navbar-nav__logged-img">
+									<span class="navbar-nav__logged-username">Admin</span>
+									<div class="navbar-nav__logout">Logout</div>
+								</li>
 							</ul>
 						</div>
 					</div>
