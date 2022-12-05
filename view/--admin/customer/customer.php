@@ -38,19 +38,23 @@
                     <th>Tính năng</th>
                   </tr>
                 </thead>
+                <?php $i=0?>
+                <?php while ($customer = mysqli_fetch_assoc($customer_list)): ?>
+                <?php $i++?>
                 <tbody>
                   <tr>
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td>1</td>
-                    <td>NoName</td>
-                    <td>@uit.edu.vn</td>
-                    <td>0909023294</td>
-                    <td>Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh	</td>
-                    <td>30/05/2022</td>
+                    <td><?php echo $i?></td>
+                    <td><?php echo $customer['fullname']?></td>
+                    <td><?php echo $customer['email']?></td>
+                    <td><?php echo $customer['phone']?></td>
+                    <td><?php echo $customer['address']?></td>
+                    <td><?php echo $customer['date']?></td>
                     <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
                   </tr>
                 </tbody>
+                <?php endwhile?>
               </table>
             </div>
           </div>

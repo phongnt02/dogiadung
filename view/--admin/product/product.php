@@ -25,40 +25,44 @@
                                   class="fas fa-trash-alt"></i> Xóa tất cả </a>
                             </div>
                           </div>
-                        <table class="table table-hover table-bordered" id="sampleTable">
+                        <table class="table table-hover table-bordered" id="sampleTable" style="margin-left:-16px;">
                             <thead>
                                 <tr>
                                     <th width="10"><input type="checkbox" id="all"></th>
+                                    <th>STT</th>
                                     <th>Mã sản phẩm</th>
-                                    <th>Ảnh</th>
                                     <th>Tên sản phẩm</th>
+                                    <th>Ảnh</th>
                                     <th>Giá tiền</th>
                                     <th>Số lượng</th>
                                     <th>Tình trạng</th>
                                     <th>Danh mục</th>
                                     <th>Thương hiệu</th>
                                     <th>Người tạo</th>
-                                    <th>Thời gian</th>
                                     <th>Chức năng</th>
                                 </tr>
                             </thead>
+                            <?php $i=0?>
+                            <?php while ($product = mysqli_fetch_assoc($product_list)): ?>
+                            <?php $i++?>
                             <tbody>
                                 <tr>
                                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                                    <td>71309005</td>
-                                    <td>Bàn ăn gỗ Theresa</td>
-                                    <td><img src="/img-sanpham/theresa.jpg" alt="" width="100px;"></td>
-                                    <td>5.600.000 đ</td>
-                                    <td>40</td>
-                                    <td><span class="badge bg-success">Còn hàng</span></td>
-                                    <td>Bàn ăn</td>
-                                    <td>Dienmayxanh</td>
-                                    <td>Admin</td>
-                                    <td>14/11/2022</td>
+                                    <td><?php echo $i?></td>
+                                    <td><?php echo $product['product_code'] ?></td>
+                                    <td><?php echo $product['name'] ?></td>
+                                    <td><img src="../../../<?php echo $product['image'] ?>" alt="" width="100px;"></td>
+                                    <td><?php echo $product['price'] ?></td>
+                                    <td><?php echo $product['amount'] ?></td>
+                                    <td><span class="badge bg-success"><?php echo $product['status'] ?></span></td>
+                                    <td><?php echo $product['name_category'] ?></td>
+                                    <td><?php echo $product['name_brand'] ?></td>
+                                    <td><?php echo $product['user'] ?></td>
                                     <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
                                 </tr>
                             </tbody>
+                            <?php endwhile?>
                         </table>
                     </div>
                 </div>
