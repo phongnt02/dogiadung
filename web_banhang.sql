@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 27, 2022 lúc 10:26 AM
+-- Thời gian đã tạo: Th10 29, 2022 lúc 02:31 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -51,25 +51,26 @@ CREATE TABLE `tbl_brand` (
   `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  ` function` text COLLATE utf8mb4_unicode_ci NOT NULL
+  ` function` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_brand` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_brand`
 --
 
-INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `name`, `user`, `date`, ` function`) VALUES
-(1, 0, '##SUNHOUSE', 'NULL', 'SUNHOUSE', 'admin', '25/11/2022', 'null'),
-(2, 0, '##PANASONIC', 'NULL', 'PANASONIC', 'admin', '25/11/2022', 'null'),
-(3, 0, '##TOSHIBA', 'NULL', 'TOSHIBA', 'admin', '25/11/2022', 'null'),
-(4, 0, '##ELECTROLUX', 'NULL', 'ELECTROLUX', 'admin', '25/11/2022', 'null'),
-(5, 0, '##SONY', 'NULL', 'SONY', 'admin', '25/11/2022', 'null'),
-(6, 0, '##LCD', 'NULL', 'LCD', 'admin', '25/11/2022', 'null'),
-(7, 0, '##DAIKIN', 'NULL', 'DAIKIN', 'admin', '25/11/2022', 'null'),
-(8, 0, '##SHARP', 'NULL', 'SHARP', 'admin', '25/11/2022', 'null'),
-(9, 0, '##NAKGAWA', 'NULL', 'NAKAGAWA', 'admin', '25/11/2022', 'null'),
-(10, 0, '##KANGAROO', 'NULL', 'KANGAROO', 'admin', '25/11/2022', 'null'),
-(11, 0, '##AQUA', 'NULL', 'AQUA', 'admin', '25/11/2022', 'null');
+INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `name`, `user`, `date`, ` function`, `status_brand`) VALUES
+(1, 0, '##SUNHOUSE', 'NULL', 'SUNHOUSE', 'admin', '25/11/2022', 'null', '0'),
+(2, 0, '##PANASONIC', 'NULL', 'PANASONIC', 'admin', '25/11/2022', 'null', '0'),
+(3, 0, '##TOSHIBA', 'NULL', 'TOSHIBA', 'admin', '25/11/2022', 'null', '0'),
+(4, 0, '##ELECTROLUX', 'NULL', 'ELECTROLUX', 'admin', '25/11/2022', 'null', '0'),
+(5, 0, '##SONY', 'NULL', 'SONY', 'admin', '25/11/2022', 'null', '0'),
+(6, 0, '##LCD', 'NULL', 'LCD', 'admin', '25/11/2022', 'null', '0'),
+(7, 0, '##DAIKIN', 'NULL', 'DAIKIN', 'admin', '25/11/2022', 'null', '0'),
+(8, 0, '##SHARP', 'NULL', 'SHARP', 'admin', '25/11/2022', 'null', '0'),
+(9, 0, '##NAKGAWA', 'NULL', 'NAKAGAWA', 'admin', '25/11/2022', 'null', '0'),
+(10, 0, '##KANGAROO', 'NULL', 'KANGAROO', 'admin', '25/11/2022', 'null', '0'),
+(11, 0, '##AQUA', 'NULL', 'AQUA', 'admin', '25/11/2022', 'null', '0');
 
 -- --------------------------------------------------------
 
@@ -104,24 +105,25 @@ CREATE TABLE `tbl_category` (
   `category_code` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(150) CHARACTER SET latin1 NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL
+  `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_category` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `create_date`, `user`) VALUES
-(36, 'Nồi cơm điện', '##Noicomdien##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(37, 'Máy lọc nước', '##maylocnuoc##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(38, 'Bếp từ', '##Beptu##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(39, 'Bếp ga', '##Bepga##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(40, 'Máy xay sinh tố', '##Mayxaysinhto##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(41, 'Nồi chiên không dầu', '##Noichienkhongdau##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(42, 'Máy xay đa năng', '##Mayxaydanang##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(43, 'Máy đánh trứng', '##Maydanhtrung##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(44, 'Máy xay thịt', '##Mayxaythit##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(45, 'Lò nướng', '##LONUONG', 'NULL', '2022-11-27 08:45:56', 'admin');
+INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `create_date`, `user`, `status_category`) VALUES
+(36, 'Nồi cơm điện', '##Noicomdien##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(37, 'Máy lọc nước', '##maylocnuoc##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(38, 'Bếp từ', '##Beptu##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(39, 'Bếp ga', '##Bepga##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(40, 'Máy xay sinh tố', '##Mayxaysinhto##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(41, 'Nồi chiên không dầu', '##Noichienkhongdau##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(42, 'Máy xay đa năng', '##Mayxaydanang##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(43, 'Máy đánh trứng', '##Maydanhtrung##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(44, 'Máy xay thịt', '##Mayxaythit##', 'NULL', '0000-00-00 00:00:00', 'admin', '0'),
+(45, 'Lò nướng', '##LONUONG', 'NULL', '2022-11-27 08:45:56', 'admin', '0');
 
 -- --------------------------------------------------------
 
@@ -242,32 +244,33 @@ CREATE TABLE `tbl_product` (
   `price` float NOT NULL,
   `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_product` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`id_product`, `name`, `product_code`, `amount`, `status`, `id_category`, `id_brand`, `sale_price`, `price`, `user`, `image`, `description`) VALUES
-(1, 'Nồi cơm điện Midea 0.6 lít MR-CM06SD', 'MR-CM06SD', 999, 'còn hàng', 36, 1, 380000, 410000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện Midea thiết kế đơn giản, trang nhã, màu trắng tươi sáng, dung tích 1.5 lít, thích hợp dùng nấu cơm cho gia đình 2 - 4 thành viên'),
-(2, 'Nồi cơm nắp gài Midea 1.5 lít MR-CM1533', 'MR-CM1533', 998, 'còn hàng', 36, 1, 0, 0, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện nắp gài thiết kế màu sắc nhãn nhặn, kiểu dáng sang trọng phù hợp với mọi gian bếp trong gia đình'),
-(3, 'Nồi cơm nắp gài Toshiba 1 lít RC-10JH2PV(B)', 'RC-10JH2PV', 10000, 'còn hàng', 36, 3, 0, 0, 'admin', 'public/images/noi-com-nap-gai-toshiba-rc-10jh2pv.jpg', 'Thiết kế nút gạt điều khiển chức năng nấu cơm và giữ ấm đơn giản, có đèn báo dễ quan sát quá trình nấu cơm'),
-(4, 'Nồi cơm điện Kangaroo 1.2 lít KG822 đỏ', 'KG822', 400, 'còn hàng', 36, 10, 0, 0, 'admin', 'public/images/kangroo-kg822-do.jpg', 'Nồi cơm Kangaroo KG822 đỏ kiểu dáng nhỏ gọn, màu sắc bắt mắt, làm nổi bật không gian bếp sử dụng'),
-(5, 'Nồi cơm điện Sharp 1.8 lít KS-N182ETV', 'KS-N182ETV', 121, 'còn hàng', 36, 8, 0, 0, 'admin', 'public/images/sharp-ks-18tjv.jpg', 'Nồi tặng kèm dây nguồn 132 cm, cốc đong, muỗng cơm, và xửng hấp dùng để chế biến các món hấp đơn giản, góp phần làm đa dạng bữa ăn của gia đình'),
-(6, 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C', 'SHD8208C', 200, 'còn hàng', 36, 1, 0, 0, 'admin', 'public/images/noi-com-nap-gai-sunhouse-shd8607w.jpg', 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C kiểu dáng nhỏ gọn, thanh lịch, màu sắc tươi sáng Dung tích nồi cơm điện 1 lít đáp ứng đủ nhu cầu nấu cơm cho gia đình từ 2 - 4 người. '),
-(7, 'Máy xay đa năng Delites BL2009', '＃MAYXAY1', 999, 'còn hàng', 42, 1, 435000, 500000, 'admin', 'public/images/mayxay-sunhouse1.jpg', 'Máy xay sinh tố Delites BL2009 có thiết kế sang trọng, tiện dụng với 1 cối xay sinh tố và 1 cối xay thực phẩm khô'),
-(8, 'Máy xay đa năng Sunhouse SHD 5112', '＃MAYXAYSHD5112', 999, 'còn hàng', 42, 1, 485000, 500000, 'admin', 'public/images/sunhouse-shd-5112-xanh-2.jpg', 'Máy xay sinh tố Sunhouse SHD 5112 Xanh màu sắc thời trang'),
-(9, 'Máy xay đa năng Toshiba MX-60T(H)', '＃MAYXAYToshibaMX-60T(H)', 999, 'còn hàng', 42, 3, 485000, 500000, 'admin', 'public/images/mayxaytoshiba.jpg', 'Máy xay sinh tố Toshiba chất liệu nhựa cao cấp không chứa BPA (Bisphenol A) độc hại, sử dụng an toàn sức khỏe'),
-(10, 'Máy xay đa năng Kangaroo KG4B3', '＃MAYXAYKG4B3', 999, 'còn hàng', 42, 10, 580000, 600000, 'admin', 'public/images/kangaroo-kg4b3-mayxay.jpg', 'Máy xay sinh tố đa năng dùng xay sinh tố, xay hạt, xay rau củ, xay thịt… với 4 cối xay chất liệu nhựa kháng vỡ an toàn.'),
-(11, 'Máy xay đa năng Panasonic MX-MG53C1CRA', '＃MAYXAYMX-MG53C1CRA', 999, 'còn hàng', 42, 2, 700000, 1000000, 'admin', 'public/images/MX-MG53C1CRA-mayxaypana.jpg', 'Máy xay sinh tố Panasonic thiết kế màu trắng sang trọng, công suất 700W, lưỡi dao sắc bén, cùng công nghệ đảo trộn V&M, cho bạn những ly sinh tố thơm ngon, bổ dưỡng hay chế biến những bữa ăn đa dạng từ thịt và cá.'),
-(12, 'Máy làm sữa hạt đa năng Kangaroo KG175HB1', '＃MAYXAYKG175HB1', 999, 'còn hàng', 42, 10, 2580000, 3000000, 'admin', 'public/images/may-xay-nau-da-nang-kangaroo-kg175hb1.jpg', 'Máy xay nấu đa năng Kangaroo thiết kế chắc chắn, sang trọng, tạo điểm nhấn cho không gian bếp Việt'),
-(13, 'Bếp nướng điện Sunhouse 1500W SHD4607', '#BepnuongSHD4607', 999, 'còn hàng', 45, 1, 420000, 525000, 'admin', 'public/images/sunhouse-shd4607lonuong.jpg', 'Bếp nướng điện Sunhouse SHD4607 có mặt bếp rộng, công suất 1500W, nướng chín thức ăn nhanh, ít tốn điện'),
-(14, 'Bếp nướng điện Kangaroo 2000W KG 699G', '#BepnuongKG699G', 999, 'còn hàng', 45, 10, 560000, 925000, 'admin', 'public/images/kangaroo-kg-699g-bepnuong.jpg', 'Bếp nướng điện Kangaroo KG 699G kiểu dáng nhỏ gọn, màu xám đen nhã nhặn phù hợp với mọi không gian như trên bàn ăn, bữa tiệc ngoài trời,...'),
-(15, 'Lò nướng thùng Sharp 1500W EO-A323RCSV-ST', '#BepnuongEO-A323RCSV-ST', 999, 'còn hàng', 45, 8, 1300000, 1925000, 'admin', 'public/images/sharp-eo-a323rcsv-st-lonuong.jpg', 'Lò nướng Sharp EO-A323RCSV-ST kiểu dáng hiện đại, sang trọng, gia dụng làm đẹp không gian bếp gia đình'),
-(16, 'Lò nướng thùng Panasonic 1500W NB-H3801KRA', '#BepnuongNB-H3801KRA', 999, 'còn hàng', 45, 2, 2300000, 3925000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3801KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm'),
-(17, 'Lò nướng thùng Panasonic 2000W NB-H3802KRA', '#BepnuongNB-H3802KRA', 999, 'còn hàng', 45, 2, 3200000, 4000000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3802KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm'),
-(18, 'Lò nướng thùng Sunhouse 1850W SHD4250S', '#BepnuongSHD4250S', 999, 'còn hàng', 45, 1, 2000000, 2825000, 'admin', 'public/images/sunhouse-mama-shd4250s-50-lit-101022-1039onuong52-600x600.jpg', 'Dung tích 50 lít thích hợp sử dụng trong gia đình có đông thành viên, nhà hàng, khách sạn,…');
+INSERT INTO `tbl_product` (`id_product`, `name`, `product_code`, `amount`, `status`, `id_category`, `id_brand`, `sale_price`, `price`, `user`, `image`, `description`, `status_product`) VALUES
+(1, 'Nồi cơm điện Midea 0.6 lít MR-CM06SD', 'MR-CM06SD', 999, 'còn hàng', 36, 1, 380000, 410000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện Midea thiết kế đơn giản, trang nhã, màu trắng tươi sáng, dung tích 1.5 lít, thích hợp dùng nấu cơm cho gia đình 2 - 4 thành viên', '0'),
+(2, 'Nồi cơm nắp gài Midea 1.5 lít MR-CM1533', 'MR-CM1533', 998, 'còn hàng', 36, 1, 400000, 450000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện nắp gài thiết kế màu sắc nhãn nhặn, kiểu dáng sang trọng phù hợp với mọi gian bếp trong gia đình', '0'),
+(3, 'Nồi cơm nắp gài Toshiba 1 lít RC-10JH2PV(B)', 'RC-10JH2PV', 10000, 'còn hàng', 36, 3, 500000, 540000, 'admin', 'public/images/noi-com-nap-gai-toshiba-rc-10jh2pv.jpg', 'Thiết kế nút gạt điều khiển chức năng nấu cơm và giữ ấm đơn giản, có đèn báo dễ quan sát quá trình nấu cơm', '0'),
+(4, 'Nồi cơm điện Kangaroo 1.2 lít KG822 đỏ', 'KG822', 400, 'còn hàng', 36, 10, 320000, 350000, 'admin', 'public/images/kangroo-kg822-do.jpg', 'Nồi cơm Kangaroo KG822 đỏ kiểu dáng nhỏ gọn, màu sắc bắt mắt, làm nổi bật không gian bếp sử dụng', '0'),
+(5, 'Nồi cơm điện Sharp 1.8 lít KS-N182ETV', 'KS-N182ETV', 121, 'còn hàng', 36, 8, 420000, 500000, 'admin', 'public/images/sharp-ks-18tjv.jpg', 'Nồi tặng kèm dây nguồn 132 cm, cốc đong, muỗng cơm, và xửng hấp dùng để chế biến các món hấp đơn giản, góp phần làm đa dạng bữa ăn của gia đình', '0'),
+(6, 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C', 'SHD8208C', 200, 'còn hàng', 36, 1, 360000, 400000, 'admin', 'public/images/noi-com-nap-gai-sunhouse-shd8607w.jpg', 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C kiểu dáng nhỏ gọn, thanh lịch, màu sắc tươi sáng Dung tích nồi cơm điện 1 lít đáp ứng đủ nhu cầu nấu cơm cho gia đình từ 2 - 4 người. ', '0'),
+(7, 'Máy xay đa năng Delites BL2009', '＃MAYXAY1', 999, 'còn hàng', 42, 1, 435000, 500000, 'admin', 'public/images/mayxay-sunhouse1.jpg', 'Máy xay sinh tố Delites BL2009 có thiết kế sang trọng, tiện dụng với 1 cối xay sinh tố và 1 cối xay thực phẩm khô', '0'),
+(8, 'Máy xay đa năng Sunhouse SHD 5112', '＃MAYXAYSHD5112', 999, 'còn hàng', 42, 1, 485000, 500000, 'admin', 'public/images/sunhouse-shd-5112-xanh-2.jpg', 'Máy xay sinh tố Sunhouse SHD 5112 Xanh màu sắc thời trang', '0'),
+(9, 'Máy xay đa năng Toshiba MX-60T(H)', '＃MAYXAYToshibaMX-60T(H)', 999, 'còn hàng', 42, 3, 485000, 500000, 'admin', 'public/images/mayxaytoshiba.jpg', 'Máy xay sinh tố Toshiba chất liệu nhựa cao cấp không chứa BPA (Bisphenol A) độc hại, sử dụng an toàn sức khỏe', '0'),
+(10, 'Máy xay đa năng Kangaroo KG4B3', '＃MAYXAYKG4B3', 999, 'còn hàng', 42, 10, 580000, 600000, 'admin', 'public/images/kangaroo-kg4b3-mayxay.jpg', 'Máy xay sinh tố đa năng dùng xay sinh tố, xay hạt, xay rau củ, xay thịt… với 4 cối xay chất liệu nhựa kháng vỡ an toàn.', '0'),
+(11, 'Máy xay đa năng Panasonic MX-MG53C1CRA', '＃MAYXAYMX-MG53C1CRA', 999, 'còn hàng', 42, 2, 700000, 1000000, 'admin', 'public/images/MX-MG53C1CRA-mayxaypana.jpg', 'Máy xay sinh tố Panasonic thiết kế màu trắng sang trọng, công suất 700W, lưỡi dao sắc bén, cùng công nghệ đảo trộn V&M, cho bạn những ly sinh tố thơm ngon, bổ dưỡng hay chế biến những bữa ăn đa dạng từ thịt và cá.', '0'),
+(12, 'Máy làm sữa hạt đa năng Kangaroo KG175HB1', '＃MAYXAYKG175HB1', 999, 'còn hàng', 42, 10, 2580000, 3000000, 'admin', 'public/images/may-xay-nau-da-nang-kangaroo-kg175hb1.jpg', 'Máy xay nấu đa năng Kangaroo thiết kế chắc chắn, sang trọng, tạo điểm nhấn cho không gian bếp Việt', '0'),
+(13, 'Bếp nướng điện Sunhouse 1500W SHD4607', '#BepnuongSHD4607', 999, 'còn hàng', 45, 1, 420000, 525000, 'admin', 'public/images/sunhouse-shd4607lonuong.jpg', 'Bếp nướng điện Sunhouse SHD4607 có mặt bếp rộng, công suất 1500W, nướng chín thức ăn nhanh, ít tốn điện', '0'),
+(14, 'Bếp nướng điện Kangaroo 2000W KG 699G', '#BepnuongKG699G', 999, 'còn hàng', 45, 10, 560000, 925000, 'admin', 'public/images/kangaroo-kg-699g-bepnuong.jpg', 'Bếp nướng điện Kangaroo KG 699G kiểu dáng nhỏ gọn, màu xám đen nhã nhặn phù hợp với mọi không gian như trên bàn ăn, bữa tiệc ngoài trời,...', '0'),
+(15, 'Lò nướng thùng Sharp 1500W EO-A323RCSV-ST', '#BepnuongEO-A323RCSV-ST', 999, 'còn hàng', 45, 8, 1300000, 1925000, 'admin', 'public/images/sharp-eo-a323rcsv-st-lonuong.jpg', 'Lò nướng Sharp EO-A323RCSV-ST kiểu dáng hiện đại, sang trọng, gia dụng làm đẹp không gian bếp gia đình', '0'),
+(16, 'Lò nướng thùng Panasonic 1500W NB-H3801KRA', '#BepnuongNB-H3801KRA', 999, 'còn hàng', 45, 2, 2300000, 3925000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3801KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm', '0'),
+(17, 'Lò nướng thùng Panasonic 2000W NB-H3802KRA', '#BepnuongNB-H3802KRA', 999, 'còn hàng', 45, 2, 3200000, 4000000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3802KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm', '0'),
+(18, 'Lò nướng thùng Sunhouse 1850W SHD4250S', '#BepnuongSHD4250S', 999, 'còn hàng', 45, 1, 2000000, 2825000, 'admin', 'public/images/sunhouse-mama-shd4250s-50-lit-101022-1039onuong52-600x600.jpg', 'Dung tích 50 lít thích hợp sử dụng trong gia đình có đông thành viên, nhà hàng, khách sạn,…', '0');
 
 -- --------------------------------------------------------
 
