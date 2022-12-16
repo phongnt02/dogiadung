@@ -13,43 +13,33 @@ require '../../../layout/--admin/sidebar.php';
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-          <form class="row">
-            <div class="form-group col-md-3">
+          <form class="row" method="POST">
+            <div class="form-group col-md-9">
               <label class="control-label">Họ và tên</label>
-              <input class="form-control" type="text">
+              <input class="form-control" name="fullname" type="text">
             </div>
-            <div class="form-group col-md-3">
-              <label for="exampleSelect1" class="control-label">Giới tính</label>
-              <select class="form-control" id="exampleSelect1">
-                <option>-- Chọn giới tính --</option>
-                <option>Nam</option>
-                <option>Nữ</option>
-              </select>
-            </div>
-            <div class="form-group col-md-3">
-              <label class="control-label">Tên đăng nhập</label>
-              <input class="form-control" type="text">
-            </div>
-            <div class="form-group col-md-3">
-              <label class="control-label">Mật khẩu</label>
-              <input class="form-control" type="password">
-            </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-9">
               <label class="control-label">Email</label>
-              <input class="form-control" type="text">
+              <input class="form-control" name="email" type="text">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-9">
               <label class="control-label">Số điện thoại</label>
-              <input class="form-control" type="text">
+              <input class="form-control" name="phone" type="text">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-9">
               <label class="control-label">Địa chỉ</label>
-              <input class="form-control" type="text">
+              <input class="form-control" name="address" type="text">
             </div>
-        </div>
-        <button class="btn btn-save" type="button">Lưu lại</button>
-        <a class="btn btn-cancel" href="">Hủy bỏ</a>
-      </div>
+            <div class="form-group col-md-9">
+              <label class="control-label">Ngày đăng ký</label>
+              <input class="form-control" name="date" type="text">
+            </div>
+            <div class="form-group col-md-9">
+              <button class="btn btn-save" type="submit">Lưu lại</button>
+              <a class="btn btn-cancel" href="">Hủy bỏ</a>
+            </div>
+          </form>
+  </div>
 </main>
 
 

@@ -5,7 +5,7 @@
 <main class="app-content">
       <div class="app-title">
         <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item active"><a href="#"><b>Quản lý bài viết</b></a></li>
+          <li class="breadcrumb-item active"><a href="#"><b>Quản lý đơn hàng</b></a></li>
         </ul>
         <div id="clock"></div>
       </div>
@@ -27,30 +27,31 @@
                 <thead>
                   <tr>
                     <th width="10"><input type="checkbox" id="all"></th>
-                    <th>STT</th>
-                    <th>Mã đơn hàng</th>
+                    <th>ID đơn hàng</th>
                     <th>Thời gian đặt</th>
                     <th>Thời gian xác nhận</th>
                     <th>Tên khách hàng</th>
                     <th>Tổng số sản phẩm</th>
                     <th>Tổng tiền</th>
                     <th>Phương thức thanh toán</th>
+                    <th>Chức năng</th>
                   </tr>
                 </thead>
-                <?php $i=0;?>
                 <?php  while ($order = mysqli_fetch_assoc($order_list)): ?>
-                <?php $i++?>
                 <tbody>
                   <tr>
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td><?php echo $i?></td>
-                    <td><?php echo $order['title']?></td>
-                    <td><?php echo $order['content']?></td>
-                    <td><?php echo $order['user']?></td>
-                    <td><?php echo $order['description']?></td>
-                    <td><?php echo $order['date']?></td>
-                    <td><img class="img-card-person" src="../../../<?php echo $order['image']?>" alt=""></td>
-                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                    <td class="id_order"><?php echo $order['id_order']?></td>
+                    <td class="date"><?php echo $order['date']?></td>
+                    <td class="date_confirm"><?php echo $order['date_confirm']?></td>
+                    <td class="fullname"><?php echo $order['fullname']?></td>
+                    <td class="total_num_product"><?php echo $order['total_num_product']?></td>
+                    <td class="total_price"><?php echo $order['total_price']?></td>
+                    <td class="payment_method"><?php echo $order['payment_method']?></td>
+                    <td>
+                      <a href="./delete-order.php?id_order=<?php echo $order['id_order']?>">
+                        <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                      </a>
                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
                   </tr>
                 </tbody>
@@ -77,36 +78,48 @@
               </span>
             </div>
           </div>
-          <div class="row">
-            <div class="form-group col-md-12">
-              <label class="control-label">Mã đơn hàng</label>
-              <input class="form-control" type="text" required value="#CD2187" disabled>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Tên khách hàng</label>
-              <input class="form-control" type="text" required value="Content">
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Tổng số sản phẩm</label>
-              <textarea class="form-control" rows="4"></textarea>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Tổng tiền</label>
-              <textarea class="form-control" rows="8" col="10"></textarea>
-            </div>
-            <div class="form-group col-md-12">
-                <label class="control-label">Hình ảnh</label>
-                <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
-                </div>
-            </div>
-          </div>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
+          <form method="POST" action="../../../Controller/--admin/order/update-order.php" class="row">
+              <div class="form-group col-md-12">
+                <label class="control-label">ID đơn hàng</label>
+                <input class="form-control" type="text" name="id_order">
+                <span span class="error" style="color: red; margin-top:6px;display: none;">ID không được phép sửa</span>
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Thời gian đặt</label>
+                <input class="form-control" type="text" name="date">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Thời gian xác nhận</label>
+                <input class="form-control" type="text" name="date_confirm">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Tên khách hàng</label>
+                <input class="form-control" type="text" name="name_customer">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">ID Giỏ hàng</label>
+                <input class="form-control" type="text" name="id_cart">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Tổng số sản phẩm</label>
+                <input class="form-control" type="text" name="total_num_product">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Tổng tiền</label>
+                <input class="form-control" type="text" name="total_price">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Phương thức thanh toán</label>
+                <select class="form-control" name="payment_method">
+                  <option value="Tiền mặt">Tiền mặt</option>
+                  <option value="Chuyển khoản">Chuyển khoản</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+              </div>
+        </form>
       </div>
     </div>
   </div>
@@ -118,6 +131,29 @@
   $(document).ready(function(){
     $(".btn-sm.edit").on("click", function () {
         $("#ModalUP").modal({ backdrop: false, keyboard: false })
+        let elementIdOrder = $(this).parent().parent().find('.id_order')[0]
+        let elementDate = $(this).parent().parent().find('.date')[0]
+        let elementConfirmDate = $(this).parent().parent().find('.date_confirm')[0]
+        let elementFullName = $(this).parent().parent().find('.fullname')[0]
+        let elementNumberProduct = $(this).parent().parent().find('.total_num_product')[0]
+        let elementTotalPrice = $(this).parent().parent().find('.total_price')[0]
+        let elementPaymentMethod = $(this).parent().parent().find('.payment_method')[0]
+
+    
+        // render Value edit
+        $('input[name="id_order"]').val(elementIdOrder.innerText)
+        $('input[name="date"]').val(elementDate.innerText)
+        $('input[name="date_confirm"]').val(elementConfirmDate.innerText)
+        $('input[name="name_customer"]').val(elementFullName.innerText)
+        $('input[name="total_num_product"]').val(elementNumberProduct.innerText)
+        $('input[name="total_price"]').val(elementTotalPrice.innerText)
+        $('input[name="payment_method"]').val(elementPaymentMethod.innerText)
+         //focus error
+         let inputID = $('input[name="id_order"]')[0]
+        inputID.onfocus = function () {
+          let error = $('.error')[0]
+          error.style.display = 'inline-block'
+        } 
       });
   });
 </script>

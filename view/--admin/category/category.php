@@ -21,27 +21,16 @@
                   <a class="btn btn-add btn-sm" href="./add-category.php" title="Thêm"><i class="fas fa-plus"></i>
                     Tạo mới</a>
                 </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                      class="fas fa-file-upload"></i> Tải từ file</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                      class="fas fa-copy"></i> Sao chép</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                      class="fas fa-trash-alt"></i> Xóa tất cả </a>
-                </div>
               </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
                                 <tr>
                                     <th width="10"><input type="checkbox" id="all"></th>
                                     <th>STT</th>
+                                    <th>ID danh mục</th>
                                     <th>Mã danh mục</th>
+                                    <th>Tên danh mục</th>
                                     <th>Hình ảnh</th>
-                                    <th>Danh mục</th>
                                     <th>Người tạo</th>
                                     <th>Thời gian</th>
                                     <th>Chức năng</th>
@@ -54,15 +43,20 @@
                                 <tr>
                                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                                     <td><?php echo $i;?></td>
-                                    <td><?php echo $category['id_category']; ?></td>
+                                    <td class="id_category"><?php echo $category['id_category']; ?></td>
+                                    <td class="category_code"><?php echo $category['category_code']; ?></td>
+                                    <td class="name"><?php echo $category['name']; ?></td>
                                     <td>
                                       <img class="img-card-person" src="../../../ <?php echo $category['image'] ?>" alt="">
                                     </td>
-                                    <td><?php echo $category['name']; ?></td>
                                     <td><?php echo $category['user']; ?></td>
                                     <td><?php echo $category['create_date']; ?></td>
-                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
+                                    <td>
+                                      <a href="./delete-category.php?id_category=<?php echo $category['id_category']?>">
+                                        <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                                      </a>
+                                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
+                                    </td>
                                 </tr>
                             </tbody>
                             <?php endwhile; ?>
@@ -80,9 +74,9 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
-        <form method="POST" action="../../../Controller/--admin/category/add.php" class="modal-body">
+        <form method="POST" action="../../../Controller/--admin/category/update-category.php" class="modal-body">
           <div class="row">
-            <div class="form-group  col-md-12">
+            <div class="form-group col-md-12">
               <span class="thong-tin-thanh-toan">
                 <h5>Chỉnh sửa thông tin danh mục</h5>
               </span>
@@ -91,15 +85,16 @@
           <div class="row">
             <div class="form-group col-md-6">
               <label class="control-label">ID danh mục</label>
-              <input class="form-control" type="text" name="id_category" required value="#CD2187" disabled>
+              <input class="form-control" type="text" name="id_category" required value="#CD2187">
+              <span class="error" style="color: red; margin-top:6px;display: none;">ID không được phép sửa</span>
             </div>
             <div class="form-group col-md-12">
-              <label class="control-label">STT</label>
-              <input class="form-control" type="text" required value="1">
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Mã thương hiệu</label>
+              <label class="control-label">Mã danh mục</label>
               <input class="form-control" type="text" name="code_category" required value="##SunHouse">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Tên danh mục</label>
+              <input class="form-control" type="text" name="name_category" required value="##SunHouse">
             </div>
             <div class="form-group col-md-12">
                 <label class="control-label">Hình ảnh</label>
@@ -107,13 +102,9 @@
                   <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
                 </div>
             </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Tên thương hiệu</label>
-              <input class="form-control" type="text" name="name_category" required value="Sun House">
-            </div>
           </div>
           <BR>
-          <button class="btn btn-save" type="submit">Lưu lại</button>
+            <button class="btn btn-save" type="submit">Lưu lại</button>
           <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
           <BR>
         </form>
@@ -130,6 +121,21 @@
   $(document).ready(function(){
     $(".btn-sm.edit").on("click", function () {
         $("#ModalUP").modal({ backdrop: false, keyboard: false })
+        let elementID = $(this).parent().parent().find('.id_category')[0]
+        let elementName = $(this).parent().parent().find('.name')[0]
+        let elementCode = $(this).parent().parent().find('.category_code')[0]
+        
+        // render Value edit
+        $('input[name="id_category"]').val(elementID.innerText)
+        $('input[name="name_category"]').val(elementName.innerText)
+        $('input[name="code_category"]').val(elementCode.innerText)
+
+        //focus error
+        let inputID = $('input[name="id_category" ]')[0]
+        inputID.onfocus = function () {
+          let error = $('.error')[0]
+          error.style.display = 'inline-block'
+        }
       });
   });
 </script>

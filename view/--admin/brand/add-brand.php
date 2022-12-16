@@ -1,20 +1,20 @@
 <?php
 require '../../../layout/--admin/header.php';
 require '../../../layout/--admin/sidebar.php';
-require "handle.php"
+
 ?>
 <main class="app-content">
 
   <div class="app-title">
     <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item">Quản lý danh mục</li>s
+      <li class="breadcrumb-item">Quản lý thương hiệu</li>
       <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
     </ul>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <h3 class="tile-title">Thêm mới danh mục</h3>
+        <h3 class="tile-title">Thêm mới thương hiệu</h3>
         <div class="tile-body">
           <div class="row element-button">
             <div class="col-sm-2">
@@ -22,19 +22,23 @@ require "handle.php"
             </div>
 
           </div>
-          <form class="row" action="handle.php" method="post">
+          <form class="row" method="POST">
             <div class="col-md-6">
               <div class="form-group col-md-12">
-                <label class="control-label">Tên danh mục</label>
+                <label class="control-label">Tên thương hiệu</label>
                 <input class="form-control" type="text" name="name">
               </div>
               <div class="form-group col-md-12">
                 <label class="control-label">Mã code</label>
-                <input class="form-control" type="text" name="category_code">
+                <input class="form-control" type="text" name="brand_code">
               </div>
               <div class="form-group col-md-12">
                 <label class="control-label">Người tạo</label>
                 <input class="form-control" type="text" name="user">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Thời gian</label>
+                <input class="form-control" type="text" name="date">
               </div>
             </div>
             <div class="form-group col-md-6">
@@ -43,15 +47,11 @@ require "handle.php"
                 <div id="myfileupload">
                   <input type="file" name="image" id="uploadfile" name="image" onchange="readURL(this);">
                 </div>
-                <div id="thumbbox">
-                  <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none">
-                  <a class="removeimg" href="javascript:"></a>
-                </div>
               </div>
             </div>
             </div>
-        <button class="btn btn-save" type="submit" name="add_category">Lưu lại</button>
-        <a class="btn btn-cancel" href="/doc/table-data-oder.html">Hủy bỏ</a>
+        <button class="btn btn-save" type="submit">Lưu lại</button>
+        <a class="btn btn-cancel" href="./add-brand.php">Hủy bỏ</a>
       </div>
           </form>
 

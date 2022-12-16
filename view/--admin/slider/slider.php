@@ -21,14 +21,6 @@
                     Tạo mới slide</a>
                 </div>
                 <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                      class="fas fa-file-upload"></i> Tải từ file</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                      class="fas fa-copy"></i> Sao chép</a>
-                </div>
-                <div class="col-sm-2">
                   <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
                       class="fas fa-trash-alt"></i> Xóa tất cả </a>
                 </div>
@@ -37,7 +29,7 @@
                 <thead>
                   <tr>
                     <th width="10"><input type="checkbox" id="all"></th>
-                    <th>STT</th>
+                    <th>ID Slide</th>
                     <th>Hình ảnh</th>
                     <th>Người tạo</th>
                     <th>Kiểu</th>
@@ -45,18 +37,19 @@
                     <th>Tính năng</th>
                   </tr>
                 </thead>
-                <?php $i=0?>
                 <?php while ($slider = mysqli_fetch_assoc($slider_list)): ?>
-                <?php $i++?>
                 <tbody>
                   <tr>
                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td><?php echo $i?></td>
+                    <td class="id_slider"><?php echo $slider['id_slider'] ?></td>
                     <td><img class="img-card-person" src="../../../<?php echo $slider['image'] ?>" alt=""></td>
-                    <td><?php echo $slider['user'] ?></td>
-                    <td><?php echo $slider['type'] ?></td>
-                    <td><?php echo $slider['date'] ?></td>
-                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
+                    <td class="user"><?php echo $slider['user'] ?></td>
+                    <td class="type"><?php echo $slider['type'] ?></td>
+                    <td class="date"><?php echo $slider['date'] ?></td>
+                    <td>
+                      <a href="./delete-slider.php?id_slider=<?php echo $slider['id_slider'] ?>">
+                        <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
+                      </a>
                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
                   </tr>
                 </tbody>
@@ -83,24 +76,31 @@
               </span>
             </div>
           </div>
-          <div class="row">
+          <form class="row" method="POST" action="../../../Controller/--admin/slider/update-slider.php">
             <div class="form-group col-md-12">
               <label class="control-label">ID slider</label>
-              <input class="form-control" type="text" required value="#CD2187" disabled>
+              <input class="form-control" name="id_slider" type="text" required value="#CD2187">
+              <span class="error" style="color: red; margin-top:6px;display: none;">ID không được phép sửa</span>
             </div>
             <div class="form-group col-md-12">
                   <label class="control-label">Người tạo</label>
-                  <input class="form-control" type="text">
-                </div>
-                <div class="form-group col-md-12">
+                  <input class="form-control" name="user" type="text">
+            </div>
+            <div class="form-group col-md-12">
+                  <label class="control-label">Kiểu</label>
+                  <input class="form-control" name="type" type="text">
+            </div>
+            <div class="form-group col-md-12">
                 <label class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
                   <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
                 </div>
             </div>
-          </div>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+            <div class="form-group col-md-12">
+              <button class="btn btn-save" type="submit">Lưu lại</button>
+              <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+            </div>
+          </form>
           <BR>
         </div>
         <div class="modal-footer">
@@ -116,6 +116,21 @@
   $(document).ready(function(){
     $(".btn-sm.edit").on("click", function () {
         $("#ModalUP").modal({ backdrop: false, keyboard: false })
+        let elementID = $(this).parent().parent().find('.id_slider')[0]
+        let elementUser = $(this).parent().parent().find('.user')[0]
+        let elementType = $(this).parent().parent().find('.type')[0]
+        
+        // render Value edit
+        $('input[name="id_slider"]').val(elementID.innerText)
+        $('input[name="user"]').val(elementUser.innerText)
+        $('input[name="type"]').val(elementType.innerText)
+
+        //focus error
+        let inputID = $('input[name="id_slider" ]')[0]
+        inputID.onfocus = function () {
+          let error = $('.error')[0]
+          error.style.display = 'inline-block'
+        }
       });
   });
 </script>
