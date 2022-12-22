@@ -52,7 +52,7 @@ function update_product($data,$conn) {
      //sql
      $sql = "UPDATE `tbl_product` SET name='{$data['name']}',product_code='{$data['product_code']}',
      amount='{$data['amount']}' , price='{$data['price']}',status='{$data['status']}',
-     id_category='{$data['category']}',id_brand='{$data['brand']}'
+     id_category='{$data['category']}',id_brand='{$data['brand']}',image='{$data['image']}'
      WHERE id_product = {$data['id_product']}";
      // return 
      return mysqli_query($conn,$sql);

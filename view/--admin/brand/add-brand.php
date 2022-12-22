@@ -22,7 +22,7 @@ require '../../../layout/--admin/sidebar.php';
             </div>
 
           </div>
-          <form class="row" method="POST">
+          <form class="row" method="POST" enctype="multipart/form-data">
             <div class="col-md-6">
               <div class="form-group col-md-12">
                 <label class="control-label">Tên thương hiệu</label>
@@ -41,13 +41,11 @@ require '../../../layout/--admin/sidebar.php';
                 <input class="form-control" type="text" name="date">
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <div class="form-group col-md-12">
-                <label class="control-label">Hình ảnh</label>
+            <div class="form-group col-md-12">
+                <label for="myfileupload" class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" name="image" id="uploadfile" name="image" onchange="readURL(this);">
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                 </div>
-              </div>
             </div>
             </div>
         <button class="btn btn-save" type="submit">Lưu lại</button>

@@ -76,7 +76,7 @@
               </span>
             </div>
           </div>
-          <form class="row" method="POST" action="../../../Controller/--admin/slider/update-slider.php">
+          <form class="row" method="POST" enctype="multipart/form-data" action="../../../Controller/--admin/slider/update-slider.php">
             <div class="form-group col-md-12">
               <label class="control-label">ID slider</label>
               <input class="form-control" name="id_slider" type="text" required value="#CD2187">
@@ -91,9 +91,9 @@
                   <input class="form-control" name="type" type="text">
             </div>
             <div class="form-group col-md-12">
-                <label class="control-label">Hình ảnh</label>
+                <label for="myfileupload" class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                 </div>
             </div>
             <div class="form-group col-md-12">

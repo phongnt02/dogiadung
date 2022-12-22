@@ -78,7 +78,7 @@ require '../../../layout/--admin/sidebar.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 
-      <form method="POST" action="../../../Controller/--admin/product/update-product.php" class="modal-body">
+      <form method="POST" enctype="multipart/form-data" action="../../../Controller/--admin/product/update-product.php" class="modal-body">
         <div class="row">
           <div class="form-group  col-md-12">
             <span class="thong-tin-thanh-toan">
@@ -132,6 +132,12 @@ require '../../../layout/--admin/sidebar.php';
                 <option value="<?php echo $brand['name'];?>"><?php echo $brand['name'];?></option>
               <?php endwhile?>
             </select>
+          </div>
+          <div class="form-group col-md-12">
+                <label for="exampleSelect1" class="control-label">Hình ảnh</label>
+                <div id="myfileupload">
+                  <input type="file" id="uploadImage" name="uploadImage"/>
+                </div>
           </div>
         </div>
         <button class="btn btn-save" type="submit">Lưu lại</button>

@@ -46,7 +46,7 @@
                                     <td class="id_brand"><?php echo $brand['id_brand']; ?></td>
                                     <td class="brand_code"><?php echo $brand['brand_code']; ?></td>
                                     <td>
-                                      <img class="img-card-person" src="../../../ <?php echo $brand['image'] ?>" alt="">
+                                      <img class="img-card-person" src="../../../<?php echo $brand['image'] ?>" alt="">
                                     </td>
                                     <td class="name_brand"><?php echo $brand['name']; ?></td>
                                     <td class="user"><?php echo $brand['user']; ?></td>
@@ -73,7 +73,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
-        <form method="POST" action="../../../Controller/--admin/brand/update-brand.php" class="modal-body">
+        <form method="POST" enctype="multipart/form-data" action="../../../Controller/--admin/brand/update-brand.php" class="modal-body">
           <div class="row">
             <div class="form-group  col-md-12">
               <span class="thong-tin-thanh-toan">
@@ -99,9 +99,9 @@
               <input class="form-control" type="text" name="date" required value="Sun House">
             </div>
             <div class="form-group col-md-12">
-                <label class="control-label">Hình ảnh</label>
+                <label for="myfileupload" class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                 </div>
             </div>
           </div>

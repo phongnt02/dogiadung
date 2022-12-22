@@ -70,7 +70,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
-        <form class="modal-body" method="POST" action="../../../Controller/--admin/blog/update-blog.php">
+        <form class="modal-body" enctype="multipart/form-data" method="POST" action="../../../Controller/--admin/blog/update-blog.php">
           <div class="row">
             <div class="form-group  col-md-12">
               <span class="thong-tin-thanh-toan">
@@ -97,9 +97,9 @@
               <textarea class="form-control" name="content" rows="8" col="10"></textarea>
             </div>
             <div class="form-group col-md-12">
-                <label class="control-label">Hình ảnh</label>
+                <label for="exampleSelect1" class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                 </div>
             </div>
           </div>

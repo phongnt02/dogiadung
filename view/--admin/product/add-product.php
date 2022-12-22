@@ -18,7 +18,7 @@
         <div class="tile">
           <h3 class="tile-title">Tạo mới sản phẩm</h3>
           <div class="tile-body">
-            <form class="row" method="POST">
+            <form class="row" method="POST" enctype="multipart/form-data">
               <div class="form-group col-md-3">
                 <label class="control-label" >Mã sản phẩm </label>
                 <input class="form-control" type="text" name="product_code">
@@ -78,7 +78,7 @@
               <div class="form-group col-md-12">
                 <label class="control-label" name="image" >Ảnh sản phẩm</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="image" onchange="readURL(this);" />
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                   </div>
               </div>
               <div class="form-group col-md-12">

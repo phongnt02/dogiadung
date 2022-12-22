@@ -14,7 +14,7 @@ require '../../../layout/--admin/sidebar.php';
       <div class="tile">
         <h3 class="tile-title">Tạo mới slider</h3>
         <div class="tile-body">
-          <form class="row" method="POST">
+          <form class="row" method="POST" enctype="multipart/form-data">
             <div class="form-group col-md-9">
               <label class="control-label">Người tạo</label>
               <input class="form-control" name="user" type="text">
@@ -24,10 +24,10 @@ require '../../../layout/--admin/sidebar.php';
               <input class="form-control" name="type" type="text">
             </div>
             <div class="form-group col-md-12">
-              <label class="control-label">Hình ảnh</label>
-              <div id="myfileupload">
-                <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
-              </div>
+                <label for="myfileupload" class="control-label">Hình ảnh</label>
+                <div id="myfileupload">
+                  <input type="file" id="uploadImage" name="uploadImage"/>
+                </div>
             </div>
             <div class="form-group col-md-3">
               <button class="btn btn-save" type="submit">Lưu lại</button>

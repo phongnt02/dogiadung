@@ -7,7 +7,7 @@ require '../../../layout/--admin/sidebar.php';
 
   <div class="app-title">
     <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item">Quản lý danh mục</li>s
+      <li class="breadcrumb-item">Quản lý danh mục</li>
       <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
     </ul>
   </div>
@@ -22,7 +22,7 @@ require '../../../layout/--admin/sidebar.php';
             </div>
 
           </div>
-            <form class="row" method="post">
+            <form class="row" method="post" enctype="multipart/form-data">
               <div class="col-md-6">
                 <div class="form-group col-md-12">
                   <label class="control-label">Tên danh mục</label>
@@ -41,7 +41,7 @@ require '../../../layout/--admin/sidebar.php';
                 <div class="form-group col-md-12">
                   <label class="control-label">Hình ảnh</label>
                   <div id="myfileupload">
-                    <input type="file" name="image" id="uploadfile" name="image" onchange="readURL(this);">
+                    <input type="file" name="uploadImage" id="uploadImage">
                   </div>
                   <div id="thumbbox">
                     <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none">

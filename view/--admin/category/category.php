@@ -47,7 +47,7 @@
                                     <td class="category_code"><?php echo $category['category_code']; ?></td>
                                     <td class="name"><?php echo $category['name']; ?></td>
                                     <td>
-                                      <img class="img-card-person" src="../../../ <?php echo $category['image'] ?>" alt="">
+                                      <img class="img-card-person" src="<?php echo $category['image'] ?>" alt="">
                                     </td>
                                     <td><?php echo $category['user']; ?></td>
                                     <td><?php echo $category['create_date']; ?></td>
@@ -74,7 +74,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
-        <form method="POST" action="../../../Controller/--admin/category/update-category.php" class="modal-body">
+        <form method="POST" enctype="multipart/form-data" action="../../../Controller/--admin/category/update-category.php" class="modal-body">
           <div class="row">
             <div class="form-group col-md-12">
               <span class="thong-tin-thanh-toan">
@@ -99,7 +99,7 @@
             <div class="form-group col-md-12">
                 <label class="control-label">Hình ảnh</label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+                  <input type="file" id="uploadImage" name="uploadImage"/>
                 </div>
             </div>
           </div>
