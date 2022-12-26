@@ -1,6 +1,7 @@
 <?php
-session_start();
-ob_start();
+$filepath = realpath(dirname(__FILE__));
+include($filepath . '/../../Controller/lib/session.php');
+Session::checkSession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +32,14 @@ ob_start();
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
-
+      <?php
+      if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+        Session::destroy();
+      }
+      ?>
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href=""><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href="?action=logout">Log out<i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>

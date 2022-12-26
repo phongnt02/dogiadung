@@ -70,6 +70,8 @@
 		this.max = this.element.data('slider-max')||options.max;
 		this.step = this.element.data('slider-step')||options.step;
 		this.value = this.element.data('slider-value')||options.value;
+		$( "#amount1" ).val(this.step[ 0 ]);
+		$( "#amount2" ).val(this.step[ 1 ]);
 		if (this.value[1]) {
 			this.range = true;
 		}
