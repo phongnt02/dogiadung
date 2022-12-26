@@ -1,6 +1,6 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="" width="50px" alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://cdn-icons-png.flaticon.com/512/25/25634.png" width="50px" alt="User Image">
       <div>
         <p class="app-sidebar__user-name"><b>Admin</b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
