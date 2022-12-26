@@ -46,10 +46,6 @@
                     <td class="email" ><?php echo $customer['email']?></td>
                     <td class="phone" ><?php echo $customer['phone']?></td>
                     <td class="address" ><?php echo $customer['address']?></td>
-<<<<<<< HEAD
-=======
-                    <td class="date" ><?php echo $customer['date']?></td>
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
                     <td>
                       <a href="./delete-customer.php?id_customer=<?php echo $customer['id_customer']?>">
                         <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
