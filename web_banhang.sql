@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
-<<<<<<< HEAD
--- Thời gian đã tạo: Th12 26, 2022 lúc 03:53 PM
-=======
--- Thời gian đã tạo: Th12 26, 2022 lúc 11:47 AM
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
+-- Thời gian đã tạo: Th12 26, 2022 lúc 04:16 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -69,18 +65,10 @@ CREATE TABLE `tbl_baiviet` (
 --
 
 INSERT INTO `tbl_baiviet` (`id_blog`, `title`, `content`, `user`, `description`, `image`, `date`) VALUES
-<<<<<<< HEAD
 (7, 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL', 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL được trang bị công nghệ Plasmacluster ion diệt khuẩn và khả năng khử nhờ vào bộ lọc các phân tử Ag+Cu giúp diệt vi khuẩn, nấm mốc, virus và mùi hôi khó chịu thông qua quá trình oxi hóa các ion.', 'admin', 'Diệt vi khuẩn, nấm mốc, mùi hôi khó chịu thông qua công nghệ Plasmacluster Ion và bộ lọc các phân tử Ag+Cu', 'public/images/blog_tulanh1.jpg', '25/12/2022'),
 (9, 'Review Nồi Chiên Không Dầu Bear 3.5L Bán Chạy Nhất 2022', 'Nồi Chiên Không Dầu Bear 3.5L. Bear được biết đến là một thương hiệu gia dụng bán chạy trên kênh online với đa dạng loại sản phẩm. Với lợi thế giá rẻ, mẫu mã cực kì bắt mắt, thương hiệu này dễ dàng thu hút được nhóm khách hàng trẻ tuổi yêu thích sự cá tính và đối tượng gia đình có con nhỏ.\n\nTrong bài viết này sẽ review chi tiết sản phẩm Nồi Chiên Không Dầu Bear 3.5L cho những ai đang tham khảo để mua sản phẩm này. Chúng ta cùng bắt đầu nhé! ', 'admin', 'Nồi Chiên Không Dầu Bear 3.5L', 'public/images/blog_noichien2.jpg', '20/12/2022'),
 (10, 'Cách Chọn Mua Một Số Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'Hãy Chọn Một Bộ Dụng Cụ Làm Việc Vặt Sửa Chữa Trong Nhà Khi Cần Thiết\r\nTrong nhà có nhiều việc vặt mà không phải lúc nào chúng ta cũng có thể thuê được thợ hay người có chuyên môn, nhưng việc đó mình có thể làm, đặc biệt là những việc vặt vãnh và sự cố bất ngờ cần xử lý ngay. Chính vì thế cần sử dụng một bộ dụng cụ đa năng có thể giải quyết những công việc này. Ví dụ như khoan một cái giá treo đồ, dây điện bị đứt, sút dây cần nối lại, nhà vô tình mất điện, hay chiếc quạt bị hư ..', 'admin', 'Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'public/images/blog_dogiadung.jpg', '22/12/2022'),
 (12, 'Nồi Chiên Không Dầu Lotte Hàn Quốc Có Tốt Không? Mua Ở Đâu Chính Hãng?', 'Hiện nay nồi chiên không dầu Lotte được bán rất nhiều ở các cửa hàng điện máy và các trang thương mại điện tử uy tín. Tuy nhiên để được sở hữu một sản phẩm chính hãng với gia tốt, chính sách bảo hành cam kết thì bạn nên mua tại WEBSITE CÔNG TY NHẬP KHẨU CHÍNH HÃNG. \r\n\r\nGiá sản phẩm chỉ còn 2.800.000 đồng so với giá ban đầu là 4.000.000 đồng giảm 30%, được niêm yết trên website, đây là cơ hội để nhiều người có thể sở hữu sản phẩm cho gian bếp nhà mình với chính sách bảo hành không thay đổi.', 'admin', 'nối chiên không dầu lotte Hàn Quốc có tốt không', 'public/images/cuckoo-crp-pk1000s-18-lit-061021-111845-600x600.jpg\"', '20/12/2022');
-=======
-(5, 'id_blog', 'id_blog', 'Admin', 'id_blog', 'public/images/banan.jpg', ''),
-(7, 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL', 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL được trang bị công nghệ Plasmacluster ion diệt khuẩn và khả năng khử nhờ vào bộ lọc các phân tử Ag+Cu giúp diệt vi khuẩn, nấm mốc, virus và mùi hôi khó chịu thông qua quá trình oxi hóa các ion.', 'admin', 'Diệt vi khuẩn, nấm mốc, mùi hôi khó chịu thông qua công nghệ Plasmacluster Ion và bộ lọc các phân tử Ag+Cu', 'public/images/blog_tulanh1.jpg', '25/12/2022'),
-(8, 'Nồi Chiên Không Dầu Lotte Hàn Quốc Có Tốt Không? Mua Ở Đâu Chính Hãng?', 'Hiện nay nồi chiên không dầu Lotte được bán rất nhiều ở các cửa hàng điện máy và các trang thương mại điện tử uy tín. Tuy nhiên để được sở hữu một sản phẩm chính hãng với gia tốt, chính sách bảo hành cam kết thì bạn nên mua tại WEBSITE CÔNG TY NHẬP KHẨU CHÍNH HÃNG. \r\n\r\nGiá sản phẩm chỉ còn 2.800.000 đồng so với giá ban đầu là 4.000.000 đồng giảm 30%, được niêm yết trên website, đây là cơ hội để nhiều người có thể sở hữu sản phẩm cho gian bếp nhà mình với chính sách bảo hành không thay đổi.', 'admin', 'nối chiên không dầu lotte Hàn Quốc có tốt không', 'public/images/kangroo-kg822-do.jpg', '20/12/2022'),
-(9, 'Review Nồi Chiên Không Dầu Bear 3.5L Bán Chạy Nhất 2022', 'Nồi Chiên Không Dầu Bear 3.5L. Bear được biết đến là một thương hiệu gia dụng bán chạy trên kênh online với đa dạng loại sản phẩm. Với lợi thế giá rẻ, mẫu mã cực kì bắt mắt, thương hiệu này dễ dàng thu hút được nhóm khách hàng trẻ tuổi yêu thích sự cá tính và đối tượng gia đình có con nhỏ.\r\n\r\nTrong bài viết này sẽ review chi tiết sản phẩm Nồi Chiên Không Dầu Bear 3.5L cho những ai đang tham khảo để mua sản phẩm này. Chúng ta cùng bắt đầu nhé! ', 'admin', 'Nồi Chiên Không Dầu Bear 3.5L', 'public/images/blog_noichien2.jpg', '20/12/2022'),
-(10, 'Cách Chọn Mua Một Số Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'Hãy Chọn Một Bộ Dụng Cụ Làm Việc Vặt Sửa Chữa Trong Nhà Khi Cần Thiết\r\nTrong nhà có nhiều việc vặt mà không phải lúc nào chúng ta cũng có thể thuê được thợ hay người có chuyên môn, nhưng việc đó mình có thể làm, đặc biệt là những việc vặt vãnh và sự cố bất ngờ cần xử lý ngay. Chính vì thế cần sử dụng một bộ dụng cụ đa năng có thể giải quyết những công việc này. Ví dụ như khoan một cái giá treo đồ, dây điện bị đứt, sút dây cần nối lại, nhà vô tình mất điện, hay chiếc quạt bị hư ..', 'admin', 'Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'public/images/blog_dogiadung.jpg', '22/12/2022');
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 -- --------------------------------------------------------
 
@@ -96,14 +84,14 @@ CREATE TABLE `tbl_brand` (
   `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  ` function` text COLLATE utf8mb4_unicode_ci NOT NULL
+  ` function` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_brand` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_brand`
 --
 
-<<<<<<< HEAD
 INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `name`, `user`, `date`, ` function`, `status_brand`) VALUES
 (1, 0, '##SUNHOUSE', 'NULL', 'SUNHOUSE', 'admin', '25/11/2022', 'null', '0'),
 (2, 0, '##PANASONIC', 'NULL', 'PANASONIC', 'admin', '25/11/2022', 'null', '0'),
@@ -116,20 +104,6 @@ INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `
 (9, 0, '##NAKGAWA', 'public/images/Nagakawa.png', 'NAKAGAWA', 'admin', '25/11/2022', 'null', '0'),
 (10, 0, '##KANGAROO', 'public/images/logo-kangaroo.jpg', 'KANGAROO', 'admin', '25/11/2022', 'null', '0'),
 (11, 0, '##AQUA', 'public/images/aqua.png', 'AQUA', 'admin', '25/11/2022', 'null', '0');
-=======
-INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `name`, `user`, `date`, ` function`) VALUES
-(1, 0, '##SUNHOUSE', 'public/images/Logo-cua-Sunhouse-Group.jpg', 'SUNHOUSE', 'admin', '25/11/2022', 'null'),
-(2, 0, '##PANASONIC', 'public/images/panasonic-vector-logo.png', 'PANASONIC', 'admin', '25/11/2022', 'null'),
-(3, 0, '##TOSHIBA', 'public/images/Logo-Toshiba.png', 'TOSHIBA', 'admin', '25/11/2022', 'null'),
-(4, 0, '##ELECTROLUX', 'public/images/Electrolux-Logo-1990.jpg', 'ELECTROLUX', 'admin', '25/11/2022', 'null'),
-(5, 0, '##SONY', 'public/images/logo-sony_1.jpg', 'SONY', 'admin', '25/11/2022', 'null'),
-(6, 0, '##LCD', 'public/images/lcd.png', 'LCD', 'admin', '25/11/2022', 'null'),
-(7, 0, '##DAIKIN', 'public/images/daikin.png', 'DAIKIN', 'admin', '25/11/2022', 'null'),
-(8, 0, '##SHARP', 'public/images/sharp.jpg', 'SHARP', 'admin', '25/11/2022', 'null'),
-(9, 0, '##NAKGAWA', 'public/images/Nagakawa.png', 'NAKAGAWA', 'admin', '25/11/2022', 'null'),
-(10, 0, '##KANGAROO', 'public/images/logo-kangaroo.jpg', 'KANGAROO', 'admin', '25/11/2022', 'null'),
-(11, 0, '##AQUA', 'public/images/aqua.png', 'AQUA', 'admin', '25/11/2022', 'null');
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 -- --------------------------------------------------------
 
@@ -166,14 +140,14 @@ CREATE TABLE `tbl_category` (
   `category_code` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(150) CHARACTER SET latin1 NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL
+  `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_category` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
-<<<<<<< HEAD
 INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `create_date`, `user`, `status_category`) VALUES
 (36, 'Nồi cơm điện', '##Noicomdien##', '../../../public/images/noi-com-nap-gai-midea1533.jpg', '2022-12-26 10:10:20', 'admin', '0'),
 (37, 'Máy lọc nước', '##maylocnuoc##', '../../../public/images/kangaroo-kg10a3-190522-021701-190x190.webp\"', '2022-12-26 10:12:21', 'admin', '0'),
@@ -185,19 +159,6 @@ INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `cr
 (43, 'Máy đánh trứng', '##Maydanhtrung##', '../../../public/images/may-danh-trung-panasonic-mk-gb3wra-224160-300x300.png\"', '2022-12-26 10:15:05', 'admin', '0'),
 (44, 'Máy xay thịt', '##Mayxaythit##', '../../../public/images/may-xay-thit-magic-ac-15-225324.jpg\"', '2022-12-26 10:15:27', 'admin', '0'),
 (45, 'Lò nướng', '##LONUONG', '../../../public/images/lonuonpanasonic.jpg', '2022-12-26 10:11:22', 'admin', '0');
-=======
-INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `create_date`, `user`) VALUES
-(36, 'Nồi cơm điện', '##Noicomdien##', '../../../public/images/noi-com-nap-gai-toshiba-rc-10jh2pv.jpg', '2022-12-26 10:42:09', 'admin'),
-(37, 'Máy lọc nước', '##maylocnuoc##', '../../../public/images/may-loc-nuoc-ro-kangaroo-kg10a4-vtu-10-loi-0-600x600.jpg', '2022-12-26 10:42:01', 'admin'),
-(38, 'Bếp từ', '##Beptu##', '../../../public/images/beptu.jpg', '2022-12-26 10:41:16', 'admin'),
-(39, 'Bếp ga', '##Bepga##', '../../../public/images/bepgakangaroo.jpg', '2022-12-26 10:40:41', 'admin'),
-(40, 'Máy xay sinh tố', '##Mayxaysinhto##', '../../../public/images/kangaroo-kg4b3-mayxay.jpg', '2022-12-26 08:05:19', 'admin'),
-(41, 'Nồi chiên không dầu', '##Noichienkhongdau##', '../../../public/images/kangroo-kg822-do.jpg', '2022-12-26 08:05:12', 'admin'),
-(42, 'Máy xay đa năng', '##Mayxaydanang##', '../../../public/images/sunhouse-shd-5112-xanh-2.jpg', '2022-12-26 08:04:56', 'admin'),
-(43, 'Máy đánh trứng', '##Maydanhtrung##', '../../../public/images/sunhouse-shd-5112-xanh-2.jpg', '2022-12-26 08:04:48', 'admin'),
-(44, 'Máy xay thịt', '##Mayxaythit##', '../../../public/images/may-xay-nau-da-nang-kangaroo-kg175hb1.jpg', '2022-12-26 08:04:29', 'admin'),
-(45, 'Lò nướng', '##Lonuong', '../../../public/images/sunhouse-mama-shd4250s-50-lit-101022-1039onuong52-600x600.jpg', '2022-12-26 08:04:12', 'admin');
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 -- --------------------------------------------------------
 
@@ -325,15 +286,10 @@ CREATE TABLE `tbl_order` (
 -- Đang đổ dữ liệu cho bảng `tbl_order`
 --
 
-<<<<<<< HEAD
 INSERT INTO `tbl_order` (`id_order`, `id_customer`, `id_cart`, `total_price`, `total_num_product`, `note`, `payment_method`, `status`, `time`, `code`, `date_confirm`, `date`) VALUES
 (50, 56, 43, 4250000, 3, 'dsgsdg', '', 'Chờ xác nhận', '2022-12-26 11:37:55', '', '0000-00-00', '2022-12-26'),
 (52, 51, 43, 410000, 1, 'fafd', '', 'Chờ xác nhận', '2022-12-26 11:38:51', '', '0000-00-00', '2022-12-26'),
 (76, 56, 45, 18390000, 6, 'fag', '', 'Chờ xác nhận', '2022-12-26 14:30:03', '', '0000-00-00', '2022-12-26');
-=======
-INSERT INTO `tbl_order` (`id_order`, `id_customer`, `id_cart`, `total_price`, `total_num_product`, `date`, `note`, `payment_method`, `status`, `time`, `code`, `date_confirm`) VALUES
-(4, 1, 2, 500000, 12, '16/12/2022', '', 'Tiền mặt', 'Thành công', '', '', '16/12/2022');
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 -- --------------------------------------------------------
 
@@ -353,14 +309,14 @@ CREATE TABLE `tbl_product` (
   `price` float NOT NULL,
   `user` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_product` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
-<<<<<<< HEAD
 INSERT INTO `tbl_product` (`id_product`, `name`, `product_code`, `amount`, `status`, `id_category`, `id_brand`, `sale_price`, `price`, `user`, `image`, `description`, `status_product`) VALUES
 (1, 'Nồi cơm điện Midea 0.6 lít MR-CM06SD', 'MR-CM06SD', 999, 'còn hàng', 36, 1, 380000, 410000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện Midea thiết kế đơn giản, trang nhã, màu trắng tươi sáng, dung tích 1.5 lít, thích hợp dùng nấu cơm cho gia đình 2 - 4 thành viên', '0'),
 (2, 'Nồi cơm nắp gài Midea 1.5 lít MR-CM1533', 'MR-CM1533', 998, 'còn hàng', 36, 1, 400000, 450000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện nắp gài thiết kế màu sắc nhãn nhặn, kiểu dáng sang trọng phù hợp với mọi gian bếp trong gia đình', '0'),
@@ -447,27 +403,6 @@ INSERT INTO `tbl_product` (`id_product`, `name`, `product_code`, `amount`, `stat
 (155, 'Máy xay thịt AVA GS-701 ', 'GS-701 ', 100, 'còn hàng', 44, 11, 540000, 554000, 'admin', 'public/images/252470-600x600-1.jpg\"', 'Máy xay thịt AVA GS-701 với cối thủy tinh dung tích 1.2 lít, công suất 450W cùng các tính năng an toàn đáp ứng nhu cầu xay thịt, gia vị, cháo,... trong gia đình.', ''),
 (156, 'Máy xay thịt Kangarooo CHB-5149 ', 'CHB-5149', 40, 'còn hàng', 44, 10, 632000, 675000, 'admin', 'public/images/may-xay-thit-bluestone-chb-5149-213857.jpg\"', 'Máy xay thịt Bluestone màu sắc hiện đại, sang trọng, làm đẹp không gian bếp sử dụng', ''),
 (159, 'Máy xay thịt Panasonic MB-G522', 'MB-G522', 24, 'còn hàng', 44, 2, 540000, 572000, 'admin', 'public/images/291774-1-600x600.jpg\"', 'Máy xay thịt đa năng Mutosi MB-G522 thiết kế hiện đại, đẹp, trang bị cối xay thủy tinh dày bền bỉ, sử dụng xay thịt, xay rau củ, xay gia vị tiện lợi với công suất 350W cùng lưỡi dao 2 tầng bằng inox 420 sắc bén, hoạt động an toàn, phục vụ hữu ích trong gian bếp gia đình', '');
-=======
-INSERT INTO `tbl_product` (`id_product`, `name`, `product_code`, `amount`, `status`, `id_category`, `id_brand`, `sale_price`, `price`, `user`, `image`, `description`) VALUES
-(1, 'Nồi cơm điện Midea 0.6 lít MR-CM06SD', 'MR-CM06SD', 999, 'còn hàng', 36, 1, 380000, 410000, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện Midea thiết kế đơn giản, trang nhã, màu trắng tươi sáng, dung tích 1.5 lít, thích hợp dùng nấu cơm cho gia đình 2 - 4 thành viên'),
-(2, 'Nồi cơm nắp gài Midea 1.5 lít MR-CM1533', 'MR-CM1533', 998, 'còn hàng', 36, 1, 0, 0, 'admin', 'public/images/noi-com-nap-gai-midea1533.jpg', 'Nồi cơm điện nắp gài thiết kế màu sắc nhãn nhặn, kiểu dáng sang trọng phù hợp với mọi gian bếp trong gia đình'),
-(3, 'Nồi cơm nắp gài Toshiba 1 lít RC-10JH2PV(B)', 'RC-10JH2PV', 10000, 'còn hàng', 36, 3, 0, 0, 'admin', 'public/images/noi-com-nap-gai-toshiba-rc-10jh2pv.jpg', 'Thiết kế nút gạt điều khiển chức năng nấu cơm và giữ ấm đơn giản, có đèn báo dễ quan sát quá trình nấu cơm'),
-(4, 'Nồi cơm điện Kangaroo 1.2 lít KG822 đỏ', 'KG822', 400, 'còn hàng', 36, 10, 0, 0, 'admin', 'public/images/kangroo-kg822-do.jpg', 'Nồi cơm Kangaroo KG822 đỏ kiểu dáng nhỏ gọn, màu sắc bắt mắt, làm nổi bật không gian bếp sử dụng'),
-(5, 'Nồi cơm điện Sharp 1.8 lít KS-N182ETV', 'KS-N182ETV', 121, 'còn hàng', 36, 8, 0, 0, 'admin', 'public/images/sharp-ks-18tjv.jpg', 'Nồi tặng kèm dây nguồn 132 cm, cốc đong, muỗng cơm, và xửng hấp dùng để chế biến các món hấp đơn giản, góp phần làm đa dạng bữa ăn của gia đình'),
-(6, 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C', 'SHD8208C', 200, 'còn hàng', 36, 1, 0, 0, 'admin', 'public/images/noi-com-nap-gai-sunhouse-shd8607w.jpg', 'Nồi cơm nắp gài Sunhouse 1 lít SHD8208C kiểu dáng nhỏ gọn, thanh lịch, màu sắc tươi sáng Dung tích nồi cơm điện 1 lít đáp ứng đủ nhu cầu nấu cơm cho gia đình từ 2 - 4 người. '),
-(7, 'Máy xay đa năng Delites BL2009', '＃MAYXAY1', 999, 'còn hàng', 42, 1, 435000, 500000, 'admin', 'public/images/mayxay-sunhouse1.jpg', 'Máy xay sinh tố Delites BL2009 có thiết kế sang trọng, tiện dụng với 1 cối xay sinh tố và 1 cối xay thực phẩm khô'),
-(8, 'Máy xay đa năng Sunhouse SHD 5112', '＃MAYXAYSHD5112', 999, 'còn hàng', 42, 1, 485000, 500000, 'admin', 'public/images/sunhouse-shd-5112-xanh-2.jpg', 'Máy xay sinh tố Sunhouse SHD 5112 Xanh màu sắc thời trang'),
-(9, 'Máy xay đa năng Toshiba MX-60T(H)', '＃MAYXAYToshibaMX-60T(H)', 999, 'còn hàng', 42, 3, 485000, 500000, 'admin', 'public/images/mayxaytoshiba.jpg', 'Máy xay sinh tố Toshiba chất liệu nhựa cao cấp không chứa BPA (Bisphenol A) độc hại, sử dụng an toàn sức khỏe'),
-(10, 'Máy xay đa năng Kangaroo KG4B3', '＃MAYXAYKG4B3', 999, 'còn hàng', 42, 10, 580000, 600000, 'admin', 'public/images/kangaroo-kg4b3-mayxay.jpg', 'Máy xay sinh tố đa năng dùng xay sinh tố, xay hạt, xay rau củ, xay thịt… với 4 cối xay chất liệu nhựa kháng vỡ an toàn.'),
-(11, 'Máy xay đa năng Panasonic MX-MG53C1CRA', '＃MAYXAYMX-MG53C1CRA', 999, 'còn hàng', 42, 2, 700000, 1000000, 'admin', 'public/images/MX-MG53C1CRA-mayxaypana.jpg', 'Máy xay sinh tố Panasonic thiết kế màu trắng sang trọng, công suất 700W, lưỡi dao sắc bén, cùng công nghệ đảo trộn V&M, cho bạn những ly sinh tố thơm ngon, bổ dưỡng hay chế biến những bữa ăn đa dạng từ thịt và cá.'),
-(12, 'Máy làm sữa hạt đa năng Kangaroo KG175HB1', '＃MAYXAYKG175HB1', 999, 'còn hàng', 42, 10, 2580000, 3000000, 'admin', 'public/images/may-xay-nau-da-nang-kangaroo-kg175hb1.jpg', 'Máy xay nấu đa năng Kangaroo thiết kế chắc chắn, sang trọng, tạo điểm nhấn cho không gian bếp Việt'),
-(13, 'Bếp nướng điện Sunhouse 1500W SHD4607', '#BepnuongSHD4607', 999, 'còn hàng', 45, 1, 420000, 525000, 'admin', 'public/images/sunhouse-shd4607lonuong.jpg', 'Bếp nướng điện Sunhouse SHD4607 có mặt bếp rộng, công suất 1500W, nướng chín thức ăn nhanh, ít tốn điện'),
-(14, 'Bếp nướng điện Kangaroo 2000W KG 699G', '#BepnuongKG699G', 999, 'còn hàng', 45, 10, 560000, 925000, 'admin', 'public/images/kangaroo-kg-699g-bepnuong.jpg', 'Bếp nướng điện Kangaroo KG 699G kiểu dáng nhỏ gọn, màu xám đen nhã nhặn phù hợp với mọi không gian như trên bàn ăn, bữa tiệc ngoài trời,...'),
-(15, 'Lò nướng thùng Sharp 1500W EO-A323RCSV-ST', '#BepnuongEO-A323RCSV-ST', 999, 'còn hàng', 45, 8, 1300000, 1925000, 'admin', 'public/images/sharp-eo-a323rcsv-st-lonuong.jpg', 'Lò nướng Sharp EO-A323RCSV-ST kiểu dáng hiện đại, sang trọng, gia dụng làm đẹp không gian bếp gia đình'),
-(16, 'Lò nướng thùng Panasonic 1500W NB-H3801KRA', '#BepnuongNB-H3801KRA', 999, 'còn hàng', 45, 2, 2300000, 3925000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3801KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm'),
-(17, 'Lò nướng thùng Panasonic 2000W NB-H3802KRA', '#BepnuongNB-H3802KRA', 999, 'còn hàng', 45, 2, 3200000, 4000000, 'admin', 'public/images/lonuonpanasonic.jpg', 'Lò nướng Panasonic NB-H3802KRA sang trọng, hiện đại, dung tích lớn đến 38 lít nướng được nhiều thực phẩm'),
-(18, 'Lò nướng thùng Sunhouse 1850W SHD4250S', '#BepnuongSHD4250S', 999, 'còn hàng', 45, 1, 2000000, 2825000, 'admin', 'public/images/sunhouse-mama-shd4250s-50-lit-101022-1039onuong52-600x600.jpg', 'Dung tích 50 lít thích hợp sử dụng trong gia đình có đông thành viên, nhà hàng, khách sạn,…');
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 -- --------------------------------------------------------
 
@@ -591,17 +526,13 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
-<<<<<<< HEAD
   MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-=======
-  MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_cart`
@@ -613,17 +544,13 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-<<<<<<< HEAD
   MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
-=======
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_detail_cart`
@@ -647,27 +574,19 @@ ALTER TABLE `tbl_login`
 -- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
-<<<<<<< HEAD
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
-=======
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-<<<<<<< HEAD
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
-=======
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
->>>>>>> d79df755514f5f7e1b8a9190866cd5d9526b6560
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
