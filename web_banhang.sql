@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 26, 2022 lúc 09:55 AM
+-- Thời gian đã tạo: Th12 26, 2022 lúc 11:47 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -42,7 +42,11 @@ CREATE TABLE `tbl_baiviet` (
 --
 
 INSERT INTO `tbl_baiviet` (`id_blog`, `title`, `content`, `user`, `description`, `image`, `date`) VALUES
-(5, 'id_blog', 'id_blog', 'Admin', 'id_blog', 'public/images/banan.jpg', '');
+(5, 'id_blog', 'id_blog', 'Admin', 'id_blog', 'public/images/banan.jpg', ''),
+(7, 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL', 'Tủ lạnh Sharp Inverter 401 lít SJ-FXP480V-SL được trang bị công nghệ Plasmacluster ion diệt khuẩn và khả năng khử nhờ vào bộ lọc các phân tử Ag+Cu giúp diệt vi khuẩn, nấm mốc, virus và mùi hôi khó chịu thông qua quá trình oxi hóa các ion.', 'admin', 'Diệt vi khuẩn, nấm mốc, mùi hôi khó chịu thông qua công nghệ Plasmacluster Ion và bộ lọc các phân tử Ag+Cu', 'public/images/blog_tulanh1.jpg', '25/12/2022'),
+(8, 'Nồi Chiên Không Dầu Lotte Hàn Quốc Có Tốt Không? Mua Ở Đâu Chính Hãng?', 'Hiện nay nồi chiên không dầu Lotte được bán rất nhiều ở các cửa hàng điện máy và các trang thương mại điện tử uy tín. Tuy nhiên để được sở hữu một sản phẩm chính hãng với gia tốt, chính sách bảo hành cam kết thì bạn nên mua tại WEBSITE CÔNG TY NHẬP KHẨU CHÍNH HÃNG. \r\n\r\nGiá sản phẩm chỉ còn 2.800.000 đồng so với giá ban đầu là 4.000.000 đồng giảm 30%, được niêm yết trên website, đây là cơ hội để nhiều người có thể sở hữu sản phẩm cho gian bếp nhà mình với chính sách bảo hành không thay đổi.', 'admin', 'nối chiên không dầu lotte Hàn Quốc có tốt không', 'public/images/kangroo-kg822-do.jpg', '20/12/2022'),
+(9, 'Review Nồi Chiên Không Dầu Bear 3.5L Bán Chạy Nhất 2022', 'Nồi Chiên Không Dầu Bear 3.5L. Bear được biết đến là một thương hiệu gia dụng bán chạy trên kênh online với đa dạng loại sản phẩm. Với lợi thế giá rẻ, mẫu mã cực kì bắt mắt, thương hiệu này dễ dàng thu hút được nhóm khách hàng trẻ tuổi yêu thích sự cá tính và đối tượng gia đình có con nhỏ.\r\n\r\nTrong bài viết này sẽ review chi tiết sản phẩm Nồi Chiên Không Dầu Bear 3.5L cho những ai đang tham khảo để mua sản phẩm này. Chúng ta cùng bắt đầu nhé! ', 'admin', 'Nồi Chiên Không Dầu Bear 3.5L', 'public/images/blog_noichien2.jpg', '20/12/2022'),
+(10, 'Cách Chọn Mua Một Số Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'Hãy Chọn Một Bộ Dụng Cụ Làm Việc Vặt Sửa Chữa Trong Nhà Khi Cần Thiết\r\nTrong nhà có nhiều việc vặt mà không phải lúc nào chúng ta cũng có thể thuê được thợ hay người có chuyên môn, nhưng việc đó mình có thể làm, đặc biệt là những việc vặt vãnh và sự cố bất ngờ cần xử lý ngay. Chính vì thế cần sử dụng một bộ dụng cụ đa năng có thể giải quyết những công việc này. Ví dụ như khoan một cái giá treo đồ, dây điện bị đứt, sút dây cần nối lại, nhà vô tình mất điện, hay chiếc quạt bị hư ..', 'admin', 'Dụng Cụ Điện, Thiết Bị Điện Trong Gia Đình!', 'public/images/blog_dogiadung.jpg', '22/12/2022');
 
 -- --------------------------------------------------------
 
@@ -66,11 +70,11 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`id_brand`, `numerical order`, `brand_code`, `image`, `name`, `user`, `date`, ` function`) VALUES
-(1, 0, '##SUNHOUSE', 'NULL', 'SUNHOUSE', 'admin', '25/11/2022', 'null'),
-(2, 0, '##PANASONIC', 'NULL', 'PANASONIC', 'admin', '25/11/2022', 'null'),
-(3, 0, '##TOSHIBA', 'kara.jpg', 'TOSHIBA', 'admin', '25/11/2022', 'null'),
-(4, 0, '##ELECTROLUX', 'NULL', 'ELECTROLUX', 'admin', '25/11/2022', 'null'),
-(5, 0, '##SONY', 'NULL', 'SONY', 'admin', '25/11/2022', 'null'),
+(1, 0, '##SUNHOUSE', 'public/images/Logo-cua-Sunhouse-Group.jpg', 'SUNHOUSE', 'admin', '25/11/2022', 'null'),
+(2, 0, '##PANASONIC', 'public/images/panasonic-vector-logo.png', 'PANASONIC', 'admin', '25/11/2022', 'null'),
+(3, 0, '##TOSHIBA', 'public/images/Logo-Toshiba.png', 'TOSHIBA', 'admin', '25/11/2022', 'null'),
+(4, 0, '##ELECTROLUX', 'public/images/Electrolux-Logo-1990.jpg', 'ELECTROLUX', 'admin', '25/11/2022', 'null'),
+(5, 0, '##SONY', 'public/images/logo-sony_1.jpg', 'SONY', 'admin', '25/11/2022', 'null'),
 (6, 0, '##LCD', 'public/images/lcd.png', 'LCD', 'admin', '25/11/2022', 'null'),
 (7, 0, '##DAIKIN', 'public/images/daikin.png', 'DAIKIN', 'admin', '25/11/2022', 'null'),
 (8, 0, '##SHARP', 'public/images/sharp.jpg', 'SHARP', 'admin', '25/11/2022', 'null'),
@@ -119,10 +123,10 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`id_category`, `name`, `category_code`, `image`, `create_date`, `user`) VALUES
-(36, 'Nồi cơm điện', '##Noicomdien##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(37, 'Máy lọc nước', '##maylocnuoc##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(38, 'Bếp từ', '##Beptu##', 'NULL', '0000-00-00 00:00:00', 'admin'),
-(39, 'Bếp ga', '##Bepga##', 'NULL', '0000-00-00 00:00:00', 'admin'),
+(36, 'Nồi cơm điện', '##Noicomdien##', '../../../public/images/noi-com-nap-gai-toshiba-rc-10jh2pv.jpg', '2022-12-26 10:42:09', 'admin'),
+(37, 'Máy lọc nước', '##maylocnuoc##', '../../../public/images/may-loc-nuoc-ro-kangaroo-kg10a4-vtu-10-loi-0-600x600.jpg', '2022-12-26 10:42:01', 'admin'),
+(38, 'Bếp từ', '##Beptu##', '../../../public/images/beptu.jpg', '2022-12-26 10:41:16', 'admin'),
+(39, 'Bếp ga', '##Bepga##', '../../../public/images/bepgakangaroo.jpg', '2022-12-26 10:40:41', 'admin'),
 (40, 'Máy xay sinh tố', '##Mayxaysinhto##', '../../../public/images/kangaroo-kg4b3-mayxay.jpg', '2022-12-26 08:05:19', 'admin'),
 (41, 'Nồi chiên không dầu', '##Noichienkhongdau##', '../../../public/images/kangroo-kg822-do.jpg', '2022-12-26 08:05:12', 'admin'),
 (42, 'Máy xay đa năng', '##Mayxaydanang##', '../../../public/images/sunhouse-shd-5112-xanh-2.jpg', '2022-12-26 08:04:56', 'admin'),
@@ -393,7 +397,7 @@ ALTER TABLE `tbl_slider`
 -- AUTO_INCREMENT cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
-  MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_brand`
