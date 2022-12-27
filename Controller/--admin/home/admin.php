@@ -8,5 +8,4 @@
     $countCategory = countCategory($conn);
     $order_list = getOrder($conn);
     require '../../../view/--admin/home/admin.php';
-
 ?>

@@ -1,10 +1,5 @@
 <?php
 require '../../../layout/--front/header.php';
-$product_detail = (isset($_SESSION['product'])) ? $_SESSION['product'] : [];
-include '../../../models/Homee.php';
-
-// echo "<pre>";
-// print_r($_SESSION['product']);
 
 ?>
 <section>
@@ -22,7 +17,7 @@ include '../../../models/Homee.php';
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="../../../view/--front/shop/shop_category.php?san-pham=<?php
+										<a href="../../../Controller/--front/shop/shop_category.php?san-pham=<?php
 																										echo $value_category['name'];
 
 																										?>">
@@ -102,7 +97,7 @@ include '../../../models/Homee.php';
 					</div>
 					<div class="col-sm-7">
 						<div class="product-information">
-							<form method="GET" action="../../../Controller/cart.php">
+							<form method="GET" action="../../../Controller/--front/cart/cart.php">
 								<!--/product-information-->
 								<img src="../../<?php echo $product_detail ['image']; ?>" class="newarrival" alt="" />
 								<h2><?php echo $product_detail ['name']; ?></h2>

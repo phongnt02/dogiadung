@@ -1,72 +1,5 @@
 <?php
 require '../../../layout/--front/header.php';
-include '../../../models/Homee.php';
-// foreach ($product as $key => $value_product) : 
-// 	echo $value_product['name'];
-// 	endforeach
-
-
-if (isset($_GET["page"])) {
-	$trang = $_GET["page"];
-} else {
-	$trang = 1;
-}
-
-$sotintrang = 6;
-
-
-$form = ($trang - 1) * $sotintrang;
-if(isset($_GET["search"]) && !empty([$_GET["search"]])){
-	$name_search = $_GET["search"];
-	$query = "SELECT * FROM tbl_product WHERE name LIKE '%$name_search%'LIMIT $form, $sotintrang";
-	$product_NN = mysqli_query($conn, $query);
-	$product_search=mysqli_query($conn, "SELECT * FROM tbl_product WHERE name LIKE '%$name_search%'");
-	$product_sch = mysqli_fetch_assoc($product_NN);
-	// var_dump($product_search);
-}
-else{
-	$product_NN = mysqli_query($conn, "SELECT * FROM tbl_product WHERE status_product='0' ORDER BY RAND() LIMIT $form, $sotintrang");
-}
-
-// foreach ($product_NN as $key => $value_product) :
-// 	echo $value_product['name'];
-// 	echo strlen($value_product['name']);
-// 	echo "<br />";
-// endforeach;
-// $tongsotin = mysqli_num_rows($product_NN);
-// echo $sotrang =ceil($tongsotin/$sotintrang);
-
-if(isset($_GET["search"]) && !empty([$_GET["search"]])){
-	$tongsotin = mysqli_num_rows($product_search);
-}
-else{
-	$tongsotin = mysqli_num_rows($product);
-}
-$sotrang = ceil($tongsotin / $sotintrang);
-
-
-//price range
-$minimum_range = 1800000;
-$maximum_range = 3500000;
-
-
-
-// echo $_POST["minimum_range"];
-// echo $_POST["maximum_range"];
-
-if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
-	$mimum_range_check = $_POST["minimum_range"];
-	$maximum_range_check = $_POST['maximum_range'];
-	$query = "SELECT * FROM tbl_product WHERE price BETWEEN '" . $_POST["minimum_range"] . "' AND '" . $_POST["maximum_range"] . "' ORDER BY price ASC";
-	$product_NN = mysqli_query($conn, $query);
-	$produ = mysqli_fetch_assoc($product_NN);
-	// var_dump($produ);
-} else {
-	$mimum_range_check = 1;
-	$maximum_range_check = 1;
-}
-// echo $mimum_range_check;
-// echo $maximum_range_check;
 ?>
 
 <section>
@@ -84,7 +17,7 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="../../../view/--front/shop/shop_category.php?san-pham=<?php
+										<a href="../../../Controller/--front/shop/shop_category.php?san-pham=<?php
 																										echo $value_category['name'];
 
 																										?>">
@@ -114,31 +47,7 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 					<!--/brands_products-->
 
 
-					<div class="price-range">
-						<!--price-range-->
-						<div id="slider-range"></div>
-						<form method="post" action="shop.php">
-							<h2>Price Range</h2>
-							<div class="row">
-								<form action="shop.php" method="post">
-									<div class="col-md-2">
-										<input type="text" name="minimum_range" id="minimum_range" class="form-control" value="<?php echo $minimum_range; ?>" />
-									</div>
-									<div class="col-md-100">
-										<input type="text" name="maximum_range" id="maximum_range" class="form-control" value="<?php echo $maximum_range; ?>" />
-									</div>
-									<div class="col-md-8" style="padding-top:12px">
-										<div id="price_range"></div>
-									</div>
-									<div class="col-md-loc-price"></br>
-										<input type="submit" class="form-control" name="submit_range" value="choose price">
-									</div>
-								</form>
-							</div>
-							<br />
-							<!-- <div id="load_product"></div> -->
-						</form>
-					</div>
+					
 					<!--/price-range-->
 
 					<div class="shipping text-center">
@@ -177,14 +86,14 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 											<p><?php echo $value_product['name'];
 
 												?></p>
-											<a href="../../../Controller/cart.php?id=<?php echo $value_product['id_product'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="../../../Controller/--front/cart/cart.php?id=<?php echo $value_product['id_product'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="../../../Controller/product.php?id=<?php echo $value_product['id_product'] ?>"><i class="fa fa-plus-square"></i>View details</a></li>
+										<li><a href="../../../Controller/--front/product/product.php?id=<?php echo $value_product['id_product'] ?>"><i class="fa fa-plus-square"></i>View details</a></li>
 										<!-- <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
@@ -205,12 +114,24 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 						$tongsotin = mysqli_num_rows($product);
 						for ($t = 1; $t <= $sotrang; $t++) {
 							if ($sotrang != 1) {
-								if($t ==$trang){
-									echo '<a href="' . "shop.php?page=$t" . '">' . $t;
+								if(isset($_GET["search"])){
+									$search =$_GET["search"];
+									if($t ==$trang){
+										echo '<a href="' . "shop.php?search=$search&page=$t" . '">' . $t;
+									}
+									else{
+										echo '<a  style="color:black;" href="' . "shop.php?search=$search&page=$t" . '">' . $t;
+									}
 								}
 								else{
-									echo '<a  style="color:black;" href="' . "shop.php?page=$t" . '">' . $t;
+									if($t ==$trang){
+										echo '<a href="' . "shop.php?page=$t" . '">' . $t;
+									}
+									else{
+										echo '<a  style="color:black;" href="' . "shop.php?page=$t" . '">' . $t;
+									}
 								}
+								
 								// echo "<a  href='shop.php?page=$t'>$t</a>";
 								// echo '<a  style="color:black;">' .$t;
 								

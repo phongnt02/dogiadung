@@ -1,8 +1,6 @@
 <?php
 require '../../../layout/--front/header.php';
-// echo $id_cart;
-// echo "<pre>";
-// print_r($cart);
+
 ?>
 <div class="buttons_added">
 
@@ -36,7 +34,7 @@ require '../../../layout/--front/header.php';
                     ?>
 
                         <tr>
-                            <form action="../../../Controller/cart.php">
+                            <form action="../../../Controller/--front/cart/cart.php">
 
 
 
@@ -73,7 +71,7 @@ require '../../../layout/--front/header.php';
 
                                 <td class="cart_delete">
                                     <button class="btn btn-primary btn-sm edit" type="submit" title="Sửa"><i class="fa fa-edit"></i></button>
-                                    <a class="cart_quantity_delete" href="../../../Controller/cart.php?id=<?php echo $value['id'] ?>&action=delete"><i class="fa fa-times"></i></a>
+                                    <a class="cart_quantity_delete" href="../../../Controller/--front/cart/cart.php?id=<?php echo $value['id'] ?>&action=delete"><i class="fa fa-times"></i></a>
 
 
                                 </td>
@@ -89,7 +87,7 @@ require '../../../layout/--front/header.php';
                 </tbody>
             </table>
         </div>
-        <form action="../checkout/checkout.php" method="POST">
+        <form action="../../../Controller/--front/checkout/checkout.php" method="POST">
             <button class="btn btn-primary btn-lg btn-block" name="checkout" type="submit">Continue to checkout</button>
         </form>
 

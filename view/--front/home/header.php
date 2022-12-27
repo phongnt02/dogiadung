@@ -1,8 +1,8 @@
 <?php
 
 require "../../../Controller/cart_function.php";
-$tbl_login = $_SESSION['tbl_login'];
-$cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
+// $tbl_login = $_SESSION['tbl_login'];
+// $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,12 +87,13 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
 								<!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
 								<li><a href="../../../Controller/--front/checkout/checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="../../../Controller/--front/cart/view_cart.php"><i class="fa fa-shopping-cart"></i> Cart( <?php echo total_item($cart) ?>)</a></li>
+								<li><a href="../../../Controller/--front/cart/view_cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<!-- <li><a href="../login/login.php"><i class="fa fa-lock"></i> Login</a></li> -->
 								<li class="navbar-nav__logged">
 									<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="img" class="navbar-nav__logged-img">
-									<span class="navbar-nav__logged-username"><?php echo $tbl_login['username'];?></span>
+									<span class="navbar-nav__logged-username"></span>
 									<form action="../../../Controller/--front/home/home.php" method="">
+	
 									<button type="submit" class="navbar-nav__logout">Logout</button>
 									</form>
 								</li>
@@ -119,23 +120,23 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="../../../Controller/--front/home/trangdau.php" class="active">Home</a></li>
+								<li><a href="../home/index.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
-										<li><a href="../../../Controller/--front/shop/shop.php">Products</a></li>
+										<li><a href="../../../Controller/--front/login/login.php">Products</a></li>
 										<!-- <li><a href="../product-detail/product-detail.php">Product Details</a></li>  -->
-										<li><a href="../../../Controller/--front/checkout/checkout.php">Checkout</a></li>
-										<li><a href="../../../Controller/--front/cart/view_cart.php">Cart</a></li>
+										<li><a href="../../../Controller/--front/login/login.php">Checkout</a></li>
+										<li><a href="../../../Controller/--front/login/login.php">Cart</a></li>
 										<li><a href="../../../Controller/--front/login/login.php">Login</a></li>
 									</ul>
 								</li>
-								<li><a href="../../../Controller/--front/blog/blog.php">Blog</a></li>
-								<li><a href="../../../Controller/--front/contact/contact.php">Contact</a></li>
+								<li><a href="../../../Controller/--front/login/login.php">Blog</a></li>
+								<li><a href="../../../Controller/--front/login/login.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<form action="../../../Controller/--front/shop/shop.php" method="get">
+						<form action="../../../Controller/--front/login/login.php" method="get">
 							<div  class="search_box pull-right">
 								<input type="text" name ="search" placeholder="Search" />
 							</div>

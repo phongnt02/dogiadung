@@ -1,116 +1,5 @@
 <?php
 require '../../../layout/--front/header.php';
-$category =  mysqli_query($conn, "SELECT * FROM tbl_category WHERE status_category='0'");
-$brand =  mysqli_query($conn, "SELECT * FROM tbl_brand WHERE status_brand='0'");
-$product = mysqli_query($conn, "SELECT * FROM tbl_product WHERE status_product='0'");
-// var_dump($_GET);
-
-
-$name_category = $_GET['san-pham'];
-$category_1 = mysqli_query($conn, "SELECT * FROM tbl_category WHERE name='$name_category'");
-$cate = mysqli_fetch_assoc($category_1);
-$id_cate = $cate['id_category'];
-
-
-//brand
-
-
-
-// var_dump($product_1);
-if (isset($_GET['san-pham'])) {
-	$sp = $_GET['san-pham'];
-	if (isset($_GET['brand'])) {
-		$br = $_GET['brand'];
-	} else {
-		$br = 1;
-	}
-} else {
-	$sp = 1;
-}
-// echo $sp,$br;
-
-// $name_brand = $br;
-// $brand_1 = mysqli_query($conn, "SELECT * FROM tbl_brand WHERE name='$name_brand'");
-// $brandd = mysqli_fetch_assoc($brand_1);
-// var_dump($brandd);
-// $id_brand = $brandd['id_brand'];
-// $product_1 = mysqli_query($conn, "SELECT *FROM tbl_product WHERE id_category= '$id_cate' AND id_brand = 'id_brand'");
-
-
-// echo $sp;
-// echo $br;
-if (isset($_GET["page"])) {
-	$trang = $_GET["page"];
-} else {
-	$trang = 1;
-}
-
-$sotintrang = 6;
-
-
-$form = ($trang - 1) * $sotintrang;
-//test	
-$product_num = mysqli_query($conn, "SELECT *FROM tbl_product WHERE id_category= '$id_cate' ");
-$product_page = mysqli_query($conn, "SELECT *FROM tbl_product WHERE id_category= '$id_cate' LIMIT $form, $sotintrang");
-//
-$name_brand = $br;
-if ($br != 1) {
-	$name_brand = $br;
-	$bra = mysqli_query($conn, "SELECT * FROM tbl_brand WHERE name='$br'");
-	$brand1 = mysqli_fetch_assoc($bra);
-	$id_brand = $brand1['id_brand'];
-	// echo $id_brand;
-	$product_num = mysqli_query($conn, "SELECT *FROM tbl_product WHERE id_brand= '$id_brand' AND id_category= '$id_cate' ");
-	$product_page = mysqli_query($conn, "SELECT *FROM tbl_product WHERE id_brand= '$id_brand' AND id_category= '$id_cate' LIMIT $form, $sotintrang");
-}
-
-
-
-//loc page
-
-
-$product_NN = mysqli_query($conn, "SELECT * FROM tbl_product WHERE status_product='0' ORDER BY RAND() LIMIT $form, $sotintrang");
-// foreach ($product_NN as $key => $value_product) :
-// 	echo $value_product['name'];
-// 	echo strlen($value_product['name']);
-// 	echo "<br />";
-// endforeach;
-// $tongsotin = mysqli_num_rows($product_NN);
-// echo $sotrang =ceil($tongsotin/$sotintrang);
-
-$tongsotin = mysqli_num_rows($product_num);
-// echo $tongsotin;
-$sotrang = ceil($tongsotin / $sotintrang);
-//price range
-$minimum_range = 1800000;
-$maximum_range = 3500000;
-
-
-
-// echo $_POST["minimum_range"];
-// echo $_POST["maximum_range"];
-
-if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
-	$mimum_range_check = $_POST["minimum_range"];
-	$maximum_range_check = $_POST['maximum_range'];
-		// echo $br,$sp;
-		if($sp!=1){
-			if($br!=1){
-				$query = "SELECT * FROM tbl_product WHERE id_category = '$id_cate' AND id_brand= '$id_brand' AND price BETWEEN '" . $_POST["minimum_range"] . "' AND '" . $_POST["maximum_range"] . "'  ORDER BY price ASC LIMIT $form, $sotintrang";
-			}
-			else{
-				$query = "SELECT * FROM tbl_product WHERE id_category = '$id_cate' AND price BETWEEN '" . $_POST["minimum_range"] . "' AND '" . $_POST["maximum_range"] . "'  ORDER BY price ASC LIMIT $form, $sotintrang";
-			}
-		}
-		
-
-	$product_page = mysqli_query($conn, $query);
-	$produ = mysqli_fetch_assoc($product_page);
-	// var_dump($produ);
-} else {
-	$mimum_range_check = 1;
-	$maximum_range_check = 1;
-}
 
 ?>
 <section>
@@ -128,7 +17,7 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="../../../view/--front/shop/shop_category.php?san-pham=<?php echo $value_category['name'] ?>">
+										<a href="../../../Controller/--front/shop/shop_category.php?san-pham=<?php echo $value_category['name'] ?>">
 											<span class="pull-right">(<?php
 																		if ($name_category == $value_category['name']) {
 																			echo '<span  style="color:blue;">' . mysqli_num_rows($num_product_category) . '</span>';
@@ -160,7 +49,7 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 								$num_brand = $value_brand['id_brand'];
 								$num_product_brand =  mysqli_query($conn, "SELECT * FROM tbl_product WHERE id_brand = $num_brand AND id_category=$id_cate"); ?>
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="../../../view/--front/shop/shop_category.php?san-pham=<?php echo $sp ?>&brand=<?php echo $value_brand['name'] ?>">
+									<li><a href="../../../Controller/--front/shop/shop_category.php?san-pham=<?php echo $sp ?>&brand=<?php echo $value_brand['name'] ?>">
 											<span class="pull-right">(<?php
 																		if ($name_brand == $value_brand['name']) {
 																			echo '<span  style="color:blue;">' . mysqli_num_rows($num_product_brand) . '</span>';
@@ -243,13 +132,13 @@ if (isset($_POST["minimum_range"]) && isset($_POST["maximum_range"])) {
 										<div class="overlay-content">
 											<h2><?php echo $value_product['price'] ?>.đ</h2>
 											<p><?php echo $value_product['name'] ?></p>
-											<a href="../../../Controller/cart.php?id=<?php echo $value_product['id_product'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="../../../Controller/--front/cart/cart.php?id=<?php echo $value_product['id_product'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="../../../Controller/product.php?id=<?php echo $value_product['id_product'] ?>"><i class="fa fa-plus-square"></i>View details</a></li>
+										<li><a href="../../../Controller/--front/product/product.php?id=<?php echo $value_product['id_product'] ?>"><i class="fa fa-plus-square"></i>View details</a></li>
 										<!-- <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li> -->
 									</ul>
 								</div>

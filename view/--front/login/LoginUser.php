@@ -1,6 +1,7 @@
 <?php 
     require '../../../view/--front/login/header.php'; 
-	include "../../../Controller/login/userlogin.php";
+	// include "../../../Controller/login/userlogin.php";
+	// require '../../../layout/--front/header.php';
 ?>
 <section id="form"><!--form-->
 		<div class="container">
@@ -8,7 +9,7 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="LoginUser.php" method="post">
+						<form action="../../../Controller/--front/login/login.php" method="post">
 							<input type="text" name="username" placeholder="Name"/>
 							<div class="has_error">
 								<span> <?php echo (isset($error['username']))?$error['username']:''?> </span>
@@ -31,7 +32,7 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="LoginUser.php" method="post">
+						<form action="../../../Controller/--front/login/login.php" method="post">
 							<input type="text" name="username" placeholder="Name"/>
 							<div class="has_error">
 								<span> <?php echo (isset($err['username']))?$err['username']:''?> </span>

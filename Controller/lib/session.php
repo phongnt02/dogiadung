@@ -31,20 +31,20 @@ class Session{
     self::init();
     if (self::get("adminlogin")== false) {
      self::destroy();
-     header("location: ../../../view/--admin/login/LoginAdmin.php");
+     header("location: ../../../Controller/--admin/login/index.php");
     }
  }
 
  public static function checkLogin(){
     self::init();
     if (self::get("adminlogin")== true) {
-     header("location: ../../..//Controller/--admin/home/admin.php");
+     header("location: ../../../Controller/--admin/home/admin.php");
     }
  }
 
  public static function destroy(){
   session_destroy();
-  header("location: ../../../view/--admin/login/LoginAdmin.php");
+  header("location: ../../../Controller/--admin/login/index.php");
   
  }
 }

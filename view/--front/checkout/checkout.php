@@ -45,7 +45,7 @@ require '../../../layout/--front/header.php';
       
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation"  action="../../../Controller/checkout.php" method="post">
+      <form class="needs-validation"  action="../../../Controller/--front/cart/detail_cart.php" method="post">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Full name</label>
@@ -133,77 +133,16 @@ require '../../../layout/--front/header.php';
           <span class="text-muted"><?php echo number_format($value['price'] * $value['quantity']) ?>.đ</span>
         </li>
         <?php endforeach ?>
-        <!-- <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
-            <small>EXAMPLECODE</small>
-          </div>
-          <span class="text-success">-$5</span>
-        </li> -->
+
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (VNĐ):</span>
           <strong><?php echo number_format(total_price($cart))?>.đ</strong>
         </li>
       </ul>
 
-      <!-- <form class="card p-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </div>
-      </form> -->
     </div>
 
 
-
-
-        <!-- <h4 class="mb-3">Payment</h4>
-
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="credit">Credit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="debit">Debit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="paypal">PayPal</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-            <small class="text-muted">Full name as displayed on card</small>
-            <div class="invalid-feedback">
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-            <div class="invalid-feedback">
-            </div>
-          </div>
-        </div> -->
         <div class="row">
           <div class="col-md-3 mb-3">
             <label for="cc-expiration">Note</label>
@@ -211,13 +150,7 @@ require '../../../layout/--front/header.php';
             <div class="invalid-feedback">
             </div>
           </div>
-          <!-- <div class="col-md-3 mb-3">
-            <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-            <div class="invalid-feedback">
-              Security code required
-            </div>
-          </div> -->
+
         </div> 
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" name="checkout" type="submit">Continue to checkout</button>
@@ -227,14 +160,7 @@ require '../../../layout/--front/header.php';
     </div>
   </div>
   
-  <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017-2019 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer> -->
+
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>

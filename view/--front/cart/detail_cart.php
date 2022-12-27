@@ -1,7 +1,4 @@
 <?php
-session_start();
-ob_start();
-
 include "../../../connect/database.php";
 require "../../../Controller/cart_function.php";
 $tbl_login = $_SESSION['tbl_login'];
@@ -22,7 +19,7 @@ $tbl_order = $_SESSION['tbl_order'];
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Checkout example · Bootstrap</title>
+    <title>Order</title>
     <link href="../../../public/--front/css/order.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 

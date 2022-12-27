@@ -35,7 +35,7 @@ $sotrang = ceil($tongsotin / $sotintrang);
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="../../../view/--front/shop/shop_category.php?san-pham=<?php
+										<a href="../../../Controller/--front/shop/shop_category.php?san-pham=<?php
 																										echo $value_category['name'];
 
 																										?>">
@@ -105,7 +105,7 @@ $sotrang = ceil($tongsotin / $sotintrang);
 							<a href="">
 								<img width="200" height="550" src="../../../<?php echo $value_blog['image'] ?>" alt="">
 							</a>
-							<p><?php echo $value_blog['description'] ?></p>
+							<p><?php echo $value_blog['content'] ?></p>
 							<!-- <a class="btn btn-primary" href="">Read More</a> -->
 						</div>
 						<!-- <div class="single-blog-post">

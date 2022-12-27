@@ -1,8 +1,8 @@
 <?php
-session_start();
-ob_start();
+// session_start();
+// ob_start();
 
-include "../../../connect/database.php";
+// include "../../connect/database.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

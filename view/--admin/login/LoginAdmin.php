@@ -21,7 +21,7 @@
 <body>
 <div class="container">
 	<section id="content">
-		<form action="LoginAdmin.php" method="post">
+		<form action="login.php" method="post">
 			<h1>Admin Login</h1>
 			<span><?php
 
